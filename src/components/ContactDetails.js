@@ -50,6 +50,8 @@ const ContactDetails = (props) => {
   const [isValidSnoType, setIsValidSnoType] = useState(true);
   const [isValidResidenceType, setIsValidResidenceType] = useState(true);
   const [isValidYearsAtResidence, setIsValidYearsAtResidence] = useState(true);
+  const [isValidTerms, setIsValidTerms] = useState(true);
+
 
 
   const validate = () => {
@@ -138,7 +140,10 @@ const ContactDetails = (props) => {
       errors.pop('RAddress2');
       errors.pop('RAddress1');
     }
-
+    if (!checked1) {
+      setIsValidTerms(false);
+      errors.push('terms and conditions');
+    }
 
     if ((errors.length) == 0) {
       console.log('error log inside if', errors);
@@ -154,7 +159,7 @@ const ContactDetails = (props) => {
     const IsValid = validate();
 
     if (IsValid) {
-      // props.navigation.navigate("EmployeeDetails");
+      props.navigation.navigate("EmployeeDetails");
       console.log('Success');
     }
     else {
@@ -251,8 +256,8 @@ const ContactDetails = (props) => {
 
           <View>
             {
-              showblock1 ? (<View><TextInput style={styles.inputStyle} placeholder='Enter your 10 digit Phone number' placeholderTextColor="rgba(34, 42, 53, 0.6)" keyboardType="numeric" value={primaryNo} onChange={(e) => {
-                setPrimaryNo(e.target.value)
+              showblock1 ? (<View><TextInput style={styles.inputStyle} placeholder='Enter your 10 digit Phone number' placeholderTextColor="rgba(34, 42, 53, 0.6)" keyboardType="numeric" value={primaryNo} onChangeText={(e) => {
+                setPrimaryNo(e)
                 setIsValidPNo(true)
               }}></TextInput>
               </View>) : (null)
@@ -310,8 +315,8 @@ const ContactDetails = (props) => {
 
           <View>
             {
-              showblock2 ? (<View><TextInput style={styles.inputStyle} placeholder='Enter your 10 digit Phone number' placeholderTextColor="rgba(34, 42, 53, 0.6)" keyboardType="numeric" value={secondaryNo} onChange={(e) => {
-                setSecondaryNo(e.target.value)
+              showblock2 ? (<View><TextInput style={styles.inputStyle} placeholder='Enter your 10 digit Phone number' placeholderTextColor="rgba(34, 42, 53, 0.6)" keyboardType="numeric" value={secondaryNo} onChangeText={(e) => {
+                setSecondaryNo(e)
                 setIsValidSNo(true)
               }}></TextInput>
               </View>) : (null)
@@ -534,37 +539,37 @@ const ContactDetails = (props) => {
 
             </View>
           </TouchableOpacity>
-          <TextInput style={styles.inputStyle} placeholder='Address line 1' placeholderTextColor="rgba(34, 42, 53, 0.6)" value={residenceAddress} onChange={(e) => {
-            setResidenceAddress(e.target.value)
+          <TextInput style={styles.inputStyle} placeholder='Address line 1' placeholderTextColor="rgba(34, 42, 53, 0.6)" value={residenceAddress} onChangeText={(e) => {
+            setResidenceAddress(e)
             setIsValidResidenceAddress(true)
           }} />
           {!isValidResidenceAddress ? (<HelperText type="error">
             Residence Address is invalid!
             {residenceAddress}
           </HelperText>) : (null)}
-          <TextInput style={styles.inputStyle} placeholder='Address Line 2' placeholderTextColor="rgba(34, 42, 53, 0.6)" value={residenceAddress2} onChange={(e) => {
-            setResidenceAddress2(e.target.value)
+          <TextInput style={styles.inputStyle} placeholder='Address Line 2' placeholderTextColor="rgba(34, 42, 53, 0.6)" value={residenceAddress2} onChangeText={(e) => {
+            setResidenceAddress2(e)
             setIsValidResidenceAddress2(true)
           }} />
           {!isValidResidenceAddress2 ? (<HelperText type="error">
             Residence Address line 2 is invalid!
           </HelperText>) : (null)}
-          <TextInput style={styles.inputStyle} placeholder='Zip Code' keyboardType='numeric' placeholderTextColor="rgba(34, 42, 53, 0.6)" value={RZipcode} onChange={(e) => {
-            setRZipcode(e.target.value)
+          <TextInput style={styles.inputStyle} placeholder='Zip Code' keyboardType='numeric' placeholderTextColor="rgba(34, 42, 53, 0.6)" value={RZipcode} onChangeText={(e) => {
+            setRZipcode(e)
             setIsValidRZipcode(true)
           }} />
           {!isValidRZipcode ? (<HelperText type="error">
             Residence Zipcode is invalid!
           </HelperText>) : (null)}
-          <TextInput style={styles.inputStyle} placeholder='City' placeholderTextColor="rgba(34, 42, 53, 0.6)" value={RCity} onChange={(e) => {
-            setRCity(e.target.value)
+          <TextInput style={styles.inputStyle} placeholder='City' placeholderTextColor="rgba(34, 42, 53, 0.6)" value={RCity} onChangeText={(e) => {
+            setRCity(e)
             setIsValidRCity(true)
           }} />
           {!isValidRCity ? (<HelperText type="error">
             Residence City is invalid!
           </HelperText>) : (null)}
-          <TextInput style={styles.inputStyle} placeholder='State' placeholderTextColor="rgba(34, 42, 53, 0.6)" value={RState} onChange={(e) => {
-            setRState(e.target.value)
+          <TextInput style={styles.inputStyle} placeholder='State' placeholderTextColor="rgba(34, 42, 53, 0.6)" value={RState} onChangeText={(e) => {
+            setRState(e)
             setIsValidRState(true)
           }} />
           {!isValidRState ? (<HelperText type="error">
@@ -581,12 +586,16 @@ const ContactDetails = (props) => {
             status={checked1 ? 'checked' : 'unchecked'}
             onPress={() => {
               setChecked1(!checked1);
+              setIsValidTerms(checked);
 
             }}
           />
           <Text style={styles.checkboxtext}>You agree that, in order for CREDITWORKS LLC to service this loan or to collect any amounts you owe, that we may from time to   <Text style={{ color: 'blue' }}
             onPress={() => Linking.openURL('http://google.com')}>Read More ...</Text>  </Text>
         </View>
+        {!isValidTerms ? (<HelperText type="error">
+          terms and conditions is invalid!
+        </HelperText>) : (null)}
       </ScrollView>
       <View style={styles.buttonContainer}>
         <TouchableOpacity style={styles.backButton}><Text style={styles.backButtonText} onPress={() => previousForm()}>Back</Text></TouchableOpacity>
