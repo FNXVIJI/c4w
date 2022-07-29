@@ -139,15 +139,15 @@ const IdentificationDetails = (props) => {
     const IsValid = validate();
 
     if (IsValid) {
-      props.navigation.navigate("ContactDetails");
+      // props.navigation.navigate("ContactDetails");
       console.log('Success');
     }
     else {
       console.log("details are not valid");
     }
-    // props.navigation.navigate("ContactDetails");
 
-    //   //props.navigation.navigate("ContactDetails");
+
+    props.navigation.navigate("ContactDetails");
 
   }
   const handleConfirm = (date) => {

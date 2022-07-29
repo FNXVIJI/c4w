@@ -159,14 +159,14 @@ const ContactDetails = (props) => {
     const IsValid = validate();
 
     if (IsValid) {
-      props.navigation.navigate("EmployeeDetails");
+      // props.navigation.navigate("EmployeeDetails");
       console.log('Success');
     }
     else {
       console.log("details are not valid");
     }
 
-    //props.navigation.navigate("EmployeeDetails");
+    props.navigation.navigate("EmployeeDetails");
 
   }
   const previousForm = () => {
