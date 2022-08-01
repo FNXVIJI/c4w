@@ -7,15 +7,18 @@ import ContactDetails from './src/components/ContactDetails';
 import Dashboard from './src/components/Dashboard';
 import EmployeeDetails from './src/components/EmployeeDetails';
 import LoanFunding1 from './src/components/LoanFunding1';
+import DesignYourLoan from './src/components/DesignYourLoan';
+import QuickRelief from './src/components/QuickRelief';
+
 // import {
-  
+
 //   en,
 //   registerTranslation,
 // } from 'react-native-paper-dates'
 
 // registerTranslation('en', en)
 
-const Stack= createStackNavigator();
+const Stack = createStackNavigator();
 
 export default function App() {
   return (
@@ -25,77 +28,102 @@ export default function App() {
     // </View>
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Dashboard"
-      screenOptions={{
-        headerTintColor: 'grey',
-        headerStyle: { backgroundColor: 'white' },
-        headerTitleStyle:{
-          textAlign:'right',
-        }
-        
-      }}
+        screenOptions={{
+          headerTintColor: 'grey',
+          headerStyle: { backgroundColor: 'white' },
+          headerTitleStyle: {
+            textAlign: 'right',
+          }
+        }}
       >
         <Stack.Screen
           name="IdentificationDetails"
           component={IdentificationDetails}
-         
+
           options={{
-            title:null,
-           
+            title: null,
+
             headerRight: () => (
-              <Text style={{backgroundColor: 'white',color:'grey',fontSize:16,fontFamily:'Poppins',padding:15}}>
+              <Text style={styles.headerText}>
                 Step 1 of 8
               </Text>
             )
           }}
-          
-          
-         
+
+
+
         />
         <Stack.Screen name="ContactDetails"
-        component={ContactDetails}
-        options={{
-          title:null,
-         
-          headerRight: () => (
-            <Text style={{backgroundColor: 'white',color:'grey',fontSize:16,fontFamily:'Poppins',padding:15}}>
-              Step 2 of 8
-            </Text>
-          )
-        }}
+          component={ContactDetails}
+          options={{
+            title: null,
+
+            headerRight: () => (
+              <Text style={styles.headerText}>
+                Step 2 of 8
+              </Text>
+            )
+          }}
 
         />
         <Stack.Screen name="EmployeeDetails"
-        component={EmployeeDetails}
-        options={{
-          title:null,
-         
-          headerRight: () => (
-            <Text style={{backgroundColor: 'white',color:'grey',fontSize:16,fontFamily:'Poppins',padding:15}}>
-              Step 3 of 8
-            </Text>
-          )
-        }}
-        />  
+          component={EmployeeDetails}
+          options={{
+            title: null,
+
+            headerRight: () => (
+              <Text style={styles.headerText}>
+                Step 3 of 8
+              </Text>
+            )
+          }}
+        />
         <Stack.Screen name="Dashboard"
-        component={Dashboard}
-        
-        options={{
-          title:'DashBoard',
-        }}
+          component={Dashboard}
+
+          options={{
+            title: 'DashBoard',
+          }}
 
         />
-        
+
         <Stack.Screen name="LoanFunding1"
-        component={LoanFunding1}
-        options={{
-          title:null,
-         
-          headerRight: () => (
-            <Text style={{backgroundColor: 'white',color:'grey',fontSize:16,fontFamily:'Poppins',padding:15}}>
-              Step 4 of 8
-            </Text>
-          )
-        }}
+          component={LoanFunding1}
+          options={{
+            title: null,
+
+            headerRight: () => (
+              <Text style={styles.headerText}>
+                Step 4 of 8
+              </Text>
+            )
+          }}
+
+        />
+        <Stack.Screen name="DesignYourLoan"
+          component={DesignYourLoan}
+          options={{
+            title: null,
+
+            headerRight: () => (
+              <Text style={styles.headerText}>
+                Step 5 of 8
+              </Text>
+            )
+          }}
+
+        />
+        <Stack.Screen name="QuickRelief"
+          component={QuickRelief}
+          options={{
+            title: null,
+
+            headerRight: () => (
+              <Text style={styles.headerText}>
+                Step 6 of 8
+              </Text>
+            )
+          }}
 
         />
       </Stack.Navigator>
@@ -109,5 +137,11 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  headerText: {
+    backgroundColor: 'white',
+    color: 'grey',
+    fontSize: 16,
+    padding: 15
   },
 });

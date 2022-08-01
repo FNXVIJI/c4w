@@ -163,7 +163,7 @@ const IdentificationDetails = (props) => {
     <View style={styles.container}>
       <ScrollView contentContainerStyle={styles.container1}>
         <Text style={styles.headingFormat}>Identification Details</Text>
-        <Text style={styles.subHeading} >Please provide your Identification details</Text>
+        <Text style={styles.subHeading1} >Please provide your Identification details</Text>
         <Text style={styles.subHeading}>Employee Id</Text>
 
         <TextInput style={styles.inputStyle} placeholder='Employee Id' placeholderTextColor="rgba(34, 42, 53, 0.6)" keyboardType="numeric" value={empId} onChangeText={(e) => {
@@ -461,6 +461,11 @@ const styles = StyleSheet.create({
     color: '#222A35',
     //   fontFamily:'Poppins',
     fontSize: 16,
+  }, subHeading1: {
+    margin: 10,
+    color: 'grey',
+    //   fontFamily:'Poppins',
+    fontSize: 16,
   },
   inputStyle: {
 
@@ -521,8 +526,6 @@ const styles = StyleSheet.create({
     },
     elevation: 5,
     shadowRadius: 10,
-
-
   },
   backButton: {
     backgroundColor: '#EEEFF2',

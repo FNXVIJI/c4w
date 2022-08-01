@@ -82,7 +82,7 @@ const LoanFunding1 = (props) => {
       console.log("details are not valid");
     }
 
-    // props.navigation.navigate("IdentificationDetails");
+    props.navigation.navigate("DesignYourLoan");
   };
   const previousForm = () => {
     props.navigation.navigate("EmployeeDetails");
@@ -92,13 +92,14 @@ const LoanFunding1 = (props) => {
     <View style={styles.container}>
       <ScrollView>
         <Text style={styles.headingFormat}>Loan Funding Details</Text>
-        <Text style={styles.subHeading} >Please select your loan funding method </Text>
+        <Text style={styles.subHeading1} >Please select your loan funding method </Text>
         <Text style={styles.subHeading}>Funding Method</Text>
         <TouchableOpacity style={styles.buttonContainer1} onPress={() => setFundingModalVisible(!fundingModalVisible)}  >
           <View style={styles.iconContainer}><Text style={styles.textcenter}>{type}</Text><AntDesign name="down" size={14} color="rgba(34, 42, 53, 0.6)" style={{ padding: 3 }} /></View>
 
         </TouchableOpacity>
         <View >
+
           <Modal
             animationType="slide"
             transparent={true}
@@ -378,12 +379,18 @@ const styles = StyleSheet.create({
     margin: 10,
     fontWeight: 'bold',
     fontSize: 30,
-    fontFamily: 'Poppins'
+    //fontFamily: 'Poppins'
   },
   subHeading: {
     margin: 10,
     color: '#222A35',
-    fontFamily: 'Poppins',
+    // fontFamily: 'Poppins',
+    fontSize: 16,
+
+  }, subHeading1: {
+    margin: 10,
+    color: 'grey',
+    //   fontFamily:'Poppins',
     fontSize: 16,
   },
   inputStyle: {

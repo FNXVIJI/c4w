@@ -205,7 +205,7 @@ const ContactDetails = (props) => {
     <View style={styles.container}>
       <ScrollView>
         <Text style={styles.headingFormat}>Contact Details</Text>
-        <Text style={{ fontFamily: 'Poppins', color: 'black', marginBottom: 10 }} >Please provide your contact details</Text>
+        <Text style={styles.subHeading1} >Please provide your contact details</Text>
         <Text style={{ fontFamily: 'Poppins', color: 'black', marginBottom: 10 }}>Primary Phone Type</Text>
         <View>
           <TouchableOpacity style={styles.buttonContainer1} onPress={() => setPNoModalVisible(!pNoModalVisible)}  >
@@ -602,7 +602,7 @@ const ContactDetails = (props) => {
         <TouchableOpacity style={styles.nextButton} onPress={() => submitForm()}><Text style={styles.nextButtonText}>Next Step</Text></TouchableOpacity>
 
       </View>
-    </View>
+    </View >
   );
 
 
@@ -679,7 +679,13 @@ const styles = StyleSheet.create({
   subHeading: {
     margin: 10,
     color: '#222A35',
-    fontFamily: 'Poppins',
+    // fontFamily: 'Poppins',
+    fontSize: 16,
+  },
+  subHeading1: {
+    margin: 10,
+    color: 'grey',
+    //   fontFamily:'Poppins',
     fontSize: 16,
   },
   inputStyle: {

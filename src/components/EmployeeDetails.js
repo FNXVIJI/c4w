@@ -105,7 +105,7 @@ const EmployeeDetails = (props) => {
     <View style={styles.container}>
       <ScrollView>
         <Text style={styles.headingFormat}>Employee Details</Text>
-        <Text style={styles.subHeading} >Please provide your Employee details</Text>
+        <Text style={styles.subHeading1} >Please provide your Employee details</Text>
         <TouchableOpacity style={styles.buttonContainer1} onPress={() => setPayCycleModalVisible(!payCycleModalVisible)}  >
           <View style={styles.iconContainer}><Text style={styles.textcenter}>{type}</Text><AntDesign name="down" size={14} color="rgba(34, 42, 53, 0.6)" style={{ padding: 3 }} /></View>
 
@@ -379,7 +379,13 @@ const styles = StyleSheet.create({
   subHeading: {
     margin: 10,
     color: '#222A35',
-    fontFamily: 'Poppins',
+    //fontFamily: 'Poppins',
+    fontSize: 16,
+  },
+  subHeading1: {
+    margin: 10,
+    color: 'grey',
+    //   fontFamily:'Poppins',
     fontSize: 16,
   },
   inputStyle: {
