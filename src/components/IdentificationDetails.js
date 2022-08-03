@@ -451,18 +451,18 @@ const styles = StyleSheet.create({
     borderRadius: 5
   },
   headingFormat: {
-    margin: 10,
+    marginBottom: 10,
     fontWeight: 'bold',
     fontSize: 30,
     // fontFamily: 'Poppins'
   },
   subHeading: {
-    margin: 10,
+    marginBottom: 10,
     color: '#222A35',
     //   fontFamily:'Poppins',
     fontSize: 16,
   }, subHeading1: {
-    margin: 10,
+    marginBottom: 10,
     color: 'grey',
     //   fontFamily:'Poppins',
     fontSize: 16,

@@ -1,9 +1,11 @@
 import React, { Component, useState } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, ScrollView } from 'react-native';
+import { AntDesign } from '@expo/vector-icons';
+import { Card } from 'react-native-paper';
 
 const QuickRelief = (props) => {
     const submitForm = () => {
-        props.navigation.navigate("Dashboard");
+        props.navigation.navigate("MonthlyBudget");
     };
 
     const previousForm = () => {
@@ -11,7 +13,23 @@ const QuickRelief = (props) => {
     };
     return (
         <View style={styles.container}>
-            <ScrollView></ScrollView>
+            <ScrollView>
+                <View>
+                    <Text style={styles.headingFormat}>You have selected QuickRelief</Text>
+                    <Text style={styles.headingFormat}>Loan Details</Text>
+                    <Text style={styles.subHeading1}>*Only one loan per employee is permitted to be outstanding at any time. Our loan products do not charge prepayment penalties or late fees.</Text>
+                    <Card style={styles.cardFormat1}><View style={styles.cellFormat}><Text>Loan Amount</Text><Text>$500.00</Text></View></Card>
+                    <Card style={styles.cardFormat22}><View style={styles.cellFormat}><Text>Terms in Months</Text><Text>05</Text></View></Card>
+                    <Card style={styles.cardFormat11}><View style={styles.cellFormat}><Text>Number of Payments</Text><Text>22</Text></View></Card>
+                    <Card style={styles.cardFormat22}><View style={styles.cellFormat}><Text>Estimated Loan Payment</Text><Text>$23.86</Text></View></Card>
+                    <Card style={styles.cardFormat11}><View style={styles.cellFormat}><Text>Estimated First Payment Due Date</Text><Text>01/07/2022</Text></View></Card>
+                    <Card style={styles.cardFormat2}><View style={styles.cellFormat}><Text>Payment Frequency</Text><Text>Weekly</Text></View></Card>
+                    <View style={styles.info}><AntDesign name="infocirlce" size={24} color="grey" /><Text style={styles.infoText}>CREDITWORKS LLC charges a $25.00 Credit Investigation Fee on all loans. The Fee is used to offset the cost of investigating and processing your loan application.</Text></View>
+                    <View style={styles.info}><AntDesign name="infocirlce" size={24} color="grey" /><Text style={styles.infoText}>Your loan application is subject to application and employment verifications. Other terms and conditions apply. Not all applicants will qualify for a loan.</Text></View>
+                    <View style={styles.info}><AntDesign name="infocirlce" size={24} color="grey" /><Text style={styles.infoText}>Your loan information is accurate as of today's date. If your loan application is approved on a subsequent date, your loan terms may be recalculated as of the date that you sign your loan documents.</Text></View>
+                </View>
+
+            </ScrollView>
             <View style={styles.buttonContainer}>
                 <TouchableOpacity style={styles.backButton}><Text style={styles.buttonText} onPress={() => previousForm()}>Back</Text></TouchableOpacity>
                 <TouchableOpacity style={styles.nextButtonContainer} onPress={() => submitForm()}><Text style={styles.nextButton}>Next Step</Text></TouchableOpacity>
@@ -37,19 +55,19 @@ const styles = StyleSheet.create({
         justifyContent: 'space-around'
     },
     headingFormat: {
-        margin: 10,
+        marginBottom: 10,
         fontWeight: 'bold',
         fontSize: 30,
         // fontFamily: 'Poppins'
     },
     subHeading: {
-        margin: 10,
+        marginBottom: 10,
         color: '#222A35',
         //   fontFamily:'Poppins',
         fontSize: 16,
     },
     subHeading1: {
-        margin: 10,
+        marginBottom: 10,
         color: 'grey',
         //   fontFamily:'Poppins',
         fontSize: 16,
@@ -99,6 +117,42 @@ const styles = StyleSheet.create({
         textAlign: "center",
         //fontFamily:'Poppins',
         color: 'white',
+    }, cellFormat: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+    }, cardFormat1: {
+        borderTopLeftRadius: 10,
+        borderTopRightRadius: 10,
+        borderColor: '#F2F8F4',
+        backgroundColor: '#F2F8F4',
+        padding: 10,
+        borderWidth: 2,
+    }, cardFormat2: {
+        borderColor: '#F2F8F4',
+        backgroundColor: '#FFFFFF',
+        padding: 10,
+        borderBottomLeftRadius: 10,
+        borderBottomRightRadius: 10,
+        borderWidth: 2,
+        marginBottom: 10
+
+    }, cardFormat11: {
+        borderWidth: 2,
+        borderColor: '#F2F8F4',
+        backgroundColor: '#F2F8F4',
+        padding: 10,
+    }, cardFormat22: {
+        borderColor: '#F2F8F4',
+        backgroundColor: '#FFFFFF',
+        padding: 10,
+        borderWidth: 2,
+
+    }, info: {
+        flexDirection: 'row',
+        margin: 10
+    }, infoText: {
+        color: 'rgba(34, 42, 53, 0.6)',
+        marginLeft: 10,
     },
 
 });

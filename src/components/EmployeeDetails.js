@@ -363,7 +363,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#EEEFF2',
     height: 50,
     marginBottom: 10,
-    fontFamily: 'Poppins',
+    //  fontFamily: 'Poppins',
     fontSize: 14,
     borderColor: 'black',
     borderStyle: 'solid',
@@ -371,19 +371,19 @@ const styles = StyleSheet.create({
     borderRadius: 5
   },
   headingFormat: {
-    margin: 10,
+    marginBottom: 10,
     fontWeight: 'bold',
     fontSize: 30,
-    fontFamily: 'Poppins'
+    // fontFamily: 'Poppins'
   },
   subHeading: {
-    margin: 10,
+    marginBottom: 10,
     color: '#222A35',
     //fontFamily: 'Poppins',
     fontSize: 16,
   },
   subHeading1: {
-    margin: 10,
+    marginBottom: 10,
     color: 'grey',
     //   fontFamily:'Poppins',
     fontSize: 16,
@@ -393,7 +393,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     height: 50,
     backgroundColor: '#EEEFF2',
-    fontFamily: 'Poppins',
+    // fontFamily: 'Poppins',
     marginBottom: 10,
     fontSize: 14,
     paddingHorizontal: 10,
@@ -480,7 +480,8 @@ const styles = StyleSheet.create({
     borderRadius: 10, borderWidth: 1, borderColor: '#EEEFF2', width: 100
   },
   backButtonText: {
-    padding: 15, fontWeight: '500', textAlign: 'center', fontFamily: 'Poppins', color: 'rgba(34, 42, 53, 0.6)'
+    padding: 15, fontWeight: '500', textAlign: 'center',// fontFamily: 'Poppins', 
+    color: 'rgba(34, 42, 53, 0.6)'
   },
   nextButton: {
     backgroundColor: '#004ADA',
@@ -498,7 +499,7 @@ const styles = StyleSheet.create({
     padding: 15,
     fontWeight: '500',
     textAlign: "center",
-    fontFamily: 'Poppins',
+    // fontFamily: 'Poppins',
     color: 'white'
   },
   modalHeader: {

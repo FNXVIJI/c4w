@@ -677,13 +677,13 @@ const styles = StyleSheet.create({
     fontFamily: 'Poppins'
   },
   subHeading: {
-    margin: 10,
+    marginBottom: 10,
     color: '#222A35',
     // fontFamily: 'Poppins',
     fontSize: 16,
   },
   subHeading1: {
-    margin: 10,
+    marginBottom: 10,
     color: 'grey',
     //   fontFamily:'Poppins',
     fontSize: 16,
@@ -693,7 +693,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     height: 50,
     backgroundColor: '#EEEFF2',
-    fontFamily: 'Poppins',
+    // fontFamily: 'Poppins',
     marginBottom: 10,
     fontSize: 14,
     paddingHorizontal: 10,
@@ -711,7 +711,7 @@ const styles = StyleSheet.create({
     height: 50,
     width: 70,
     backgroundColor: '#EEEFF2',
-    fontFamily: 'Poppins',
+    // fontFamily: 'Poppins',
     marginBottom: 10,
     fontSize: 14,
     paddingHorizontal: 10,
@@ -740,7 +740,7 @@ const styles = StyleSheet.create({
   },
   checkboxtext1: {
     marginLeft: 10,
-    fontFamily: 'Poppins',
+    //  fontFamily: 'Poppins',
     fontSize: 14,
     color: '#047E40',
 
@@ -819,7 +819,7 @@ const styles = StyleSheet.create({
     padding: 15,
     fontWeight: '500',
     textAlign: 'center',
-    fontFamily: 'Poppins',
+    // fontFamily: 'Poppins',
     color: 'rgba(34, 42, 53, 0.6)'
   },
   nextButton: {
@@ -837,7 +837,11 @@ const styles = StyleSheet.create({
   },
   nextButtonText:
   {
-    padding: 15, fontWeight: '500', textAlign: "center", fontFamily: 'Poppins', color: 'white'
+    padding: 15,
+    fontWeight: '500',
+    textAlign: "center",
+    //fontFamily: 'Poppins',
+    color: 'white'
   },
 });
 

@@ -9,6 +9,10 @@ import EmployeeDetails from './src/components/EmployeeDetails';
 import LoanFunding1 from './src/components/LoanFunding1';
 import DesignYourLoan from './src/components/DesignYourLoan';
 import QuickRelief from './src/components/QuickRelief';
+import FlexibleLifeline from './src/components/FlexibleLifeline';
+import MonthlyBudget from './src/components/MonthlyBudget';
+import LoanSummary from './src/components/LoanSummary';
+import ApplicationLoading from './src/components/ApplicationLoading';
 
 // import {
 
@@ -121,6 +125,58 @@ export default function App() {
             headerRight: () => (
               <Text style={styles.headerText}>
                 Step 6 of 8
+              </Text>
+            )
+          }}
+
+        />
+        <Stack.Screen name="FlexibleLifeline"
+          component={FlexibleLifeline}
+          options={{
+            title: null,
+
+            headerRight: () => (
+              <Text style={styles.headerText}>
+                Step 6 of 8
+              </Text>
+            )
+          }}
+
+        />
+        <Stack.Screen name="MonthlyBudget"
+          component={MonthlyBudget}
+          options={{
+            title: null,
+
+            headerRight: () => (
+              <Text style={styles.headerText}>
+                Step 6 of 8
+              </Text>
+            )
+          }}
+
+        />
+        <Stack.Screen name="LoanSummary"
+          component={LoanSummary}
+          options={{
+            title: null,
+
+            headerRight: () => (
+              <Text style={styles.headerText}>
+                Step 7 of 8
+              </Text>
+            )
+          }}
+
+        />
+        <Stack.Screen name="ApplicationLoading"
+          component={ApplicationLoading}
+          options={{
+            title: null,
+
+            headerRight: () => (
+              <Text style={styles.headerText}>
+                Step 8 of 8
               </Text>
             )
           }}
