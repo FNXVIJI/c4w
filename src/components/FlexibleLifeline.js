@@ -20,23 +20,23 @@ const FlexibleLifeline = (props) => {
                     maximumTrackTintColor="#004ADA"
                     thumbTintColor="#004ADA"
                 />
-                <Card style={styles.cardFormat}>
+                <Card style={styles.cardFormat1}>
                     <Text style={styles.subHeading}>6 Months</Text>
                     <View style={styles.cardView}><Text style={styles.subHeading}>Loan Payment</Text><Text style={styles.subHeading1}>$21.56</Text></View>
                     <View style={styles.cardView}><Text style={styles.subHeading}>No of Payment</Text><Text style={styles.subHeading1}>26</Text></View>
                     <TouchableOpacity style={styles.nextButtonContainer1} onPress={() => quickLoan()}><Text style={styles.nextButton}>Select 6 Months</Text></TouchableOpacity>
                 </Card>
-                <Card style={styles.cardFormat}>
+                <Card style={styles.cardFormat2}>
                     <Text style={styles.subHeading}>12 Months</Text>
                     <View style={styles.cardView}><Text style={styles.subHeading}>Loan Payment</Text><Text style={styles.subHeading1}>$21.56</Text></View>
                     <View style={styles.cardView}><Text style={styles.subHeading}>No of Payment</Text><Text style={styles.subHeading1}>48</Text></View>
-                    <TouchableOpacity style={styles.nextButtonContainer1} onPress={() => quickLoan()}><Text style={styles.nextButton}>Select 12 Months</Text></TouchableOpacity>
+                    <TouchableOpacity style={styles.nextButtonContainer2} onPress={() => quickLoan()}><Text style={styles.nextButton}>Select 12 Months</Text></TouchableOpacity>
                 </Card>
-                <Card style={styles.cardFormat}>
+                <Card style={styles.cardFormat3}>
                     <Text style={styles.subHeading}>18 Months</Text>
                     <View style={styles.cardView}><Text style={styles.subHeading}>Loan Payment</Text><Text style={styles.subHeading1}>$21.56</Text></View>
                     <View style={styles.cardView}><Text style={styles.subHeading}>No of Payment</Text><Text style={styles.subHeading1}>56</Text></View>
-                    <TouchableOpacity style={styles.nextButtonContainer1} onPress={() => quickLoan()}><Text style={styles.nextButton}>Select 18 Months</Text></TouchableOpacity>
+                    <TouchableOpacity style={styles.nextButtonContainer3} onPress={() => quickLoan()}><Text style={styles.nextButton}>Select 18 Months</Text></TouchableOpacity>
                 </Card>
             </ScrollView>
         </View>
@@ -66,11 +66,26 @@ const styles = StyleSheet.create({
         margin: 10,
         fontSize: 20,
         color: '#222A35'
-    }, cardFormat: {
+    },
+    cardFormat1: {
+
+        borderColor: 'rgba(34, 42, 53, 0.1)',
+        borderWidth: 1,
+        backgroundColor: '#F2F8F4',
+        padding: 10,
+        margin: 15
+    },
+    cardFormat2: {
 
         borderColor: '#EEEFF2',
         borderWidth: 1,
         backgroundColor: '#EEEFF2',
+        padding: 10,
+        margin: 15
+    }, cardFormat3: {
+        borderColor: 'rgba(34, 42, 53, 0.1)',
+        borderWidth: 1,
+        backgroundColor: '#FCF5FD',
         padding: 10,
         margin: 15
     }, subHeading1: {
@@ -82,7 +97,31 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: "space-between"
     }, nextButtonContainer1: {
+        backgroundColor: '#047E40',
+        borderRadius: 10,
+        shadowColor: 'rgba(0, 74, 218, 0.25)',
+        shadowOffset: {
+            width: 0,
+            height: 6
+        },
+        elevation: 0,
+        shadowRadius: 10,
+        width: 100 + '%',
+    },
+    nextButtonContainer2: {
         backgroundColor: '#004ADA',
+        borderRadius: 10,
+        shadowColor: 'rgba(0, 74, 218, 0.25)',
+        shadowOffset: {
+            width: 0,
+            height: 6
+        },
+        elevation: 0,
+        shadowRadius: 10,
+        width: 100 + '%',
+    },
+    nextButtonContainer3: {
+        backgroundColor: '#D96320',
         borderRadius: 10,
         shadowColor: 'rgba(0, 74, 218, 0.25)',
         shadowOffset: {

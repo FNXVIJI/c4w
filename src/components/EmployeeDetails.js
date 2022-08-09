@@ -107,7 +107,7 @@ const EmployeeDetails = (props) => {
         <Text style={styles.headingFormat}>Employee Details</Text>
         <Text style={styles.subHeading1} >Please provide your Employee details</Text>
         <TouchableOpacity style={styles.buttonContainer1} onPress={() => setPayCycleModalVisible(!payCycleModalVisible)}  >
-          <View style={styles.iconContainer}><Text style={styles.textcenter}>{type}</Text><AntDesign name="down" size={14} color="rgba(34, 42, 53, 0.6)" style={{ padding: 3 }} /></View>
+          <View style={styles.iconContainer}><Text style={styles.textcenter}>{type}</Text><AntDesign name="down" size={14} color={type == 'Select Type' ? "rgba(34, 42, 53, 0.6)" : '#004ADA'} style={{ padding: 3 }} /></View>
 
         </TouchableOpacity>
         <Modal
@@ -187,7 +187,7 @@ const EmployeeDetails = (props) => {
           Date of Hire is invalid!
         </HelperText>) : (null)}
         <TouchableOpacity style={styles.buttonContainer1} onPress={() => setETypeModalVisible(!eTypeModalVisible)}  >
-          <View style={styles.iconContainer}><Text style={styles.textcenter}>{etype}</Text><AntDesign name="down" size={14} color="rgba(34, 42, 53, 0.6)" style={{ padding: 3 }} /></View>
+          <View style={styles.iconContainer}><Text style={styles.textcenter}>{etype}</Text><AntDesign name="down" size={14} color={etype == 'Select Type' ? "rgba(34, 42, 53, 0.6)" : '#004ADA'} style={{ padding: 3 }} /></View>
 
         </TouchableOpacity>
 
@@ -234,7 +234,7 @@ const EmployeeDetails = (props) => {
           Current Employement status is invalid!
         </HelperText>) : (null)}
         <TouchableOpacity style={styles.buttonContainer1} onPress={() => setJTypeModalVisible(!jTypeModalVisible)}  >
-          <View style={styles.iconContainer}><Text style={styles.textcenter}>{jtype}</Text><AntDesign name="down" size={14} color="rgba(34, 42, 53, 0.6)" style={{ padding: 3 }} /></View>
+          <View style={styles.iconContainer}><Text style={styles.textcenter}>{jtype}</Text><AntDesign name="down" size={14} color={jtype == 'Select Type' ? "rgba(34, 42, 53, 0.6)" : '#004ADA'} style={{ padding: 3 }} /></View>
 
         </TouchableOpacity>
         <View >
@@ -290,7 +290,7 @@ const EmployeeDetails = (props) => {
               setIsValidEmploymentTerms(true);
             }}
           /><Text style={styles.checkboxtext}>Authorization for Employer to Share Information with CreditWorks LLC
-            <Text style={{ fontSize: 12 }}> I authorize my employer to share my employment information with CREDITWORKS LLC, as requested by CREDITWORKS</Text><Text style={{ color: 'blue' }}
+            <Text style={{ fontSize: 12, color: 'rgba(34, 42, 53, 0.6)' }}> I authorize my employer to share my employment information with CREDITWORKS LLC, as requested by CREDITWORKS</Text><Text style={{ color: 'blue' }}
               onPress={() => Linking.openURL('http://google.com')}>  Read More ...</Text></Text>
         </View>
         {!isValidEmploymentTerms ? (<HelperText type="error">
@@ -377,13 +377,13 @@ const styles = StyleSheet.create({
     // fontFamily: 'Poppins'
   },
   subHeading: {
-    marginBottom: 10,
+    marginBottom: 20,
     color: '#222A35',
-    //fontFamily: 'Poppins',
+    //   fontFamily:'Poppins',
     fontSize: 16,
-  },
-  subHeading1: {
-    marginBottom: 10,
+    fontWeight: 'bold',
+  }, subHeading1: {
+    marginBottom: 30,
     color: 'grey',
     //   fontFamily:'Poppins',
     fontSize: 16,
@@ -412,10 +412,10 @@ const styles = StyleSheet.create({
     color: "rgba(34, 42, 53, 0.6)",
   },
   checkboxtext: {
-    // padding:5,
-    // marginRight:5,
-    //   flexWrap:'wrap'  
 
+    color: '#222A35',
+    fontWeight: '500',
+    fontSize: 14
   },
   checkbox: {
 

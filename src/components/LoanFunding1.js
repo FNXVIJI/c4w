@@ -95,7 +95,11 @@ const LoanFunding1 = (props) => {
         <Text style={styles.subHeading1} >Please select your loan funding method </Text>
         <Text style={styles.subHeading}>Funding Method</Text>
         <TouchableOpacity style={styles.buttonContainer1} onPress={() => setFundingModalVisible(!fundingModalVisible)}  >
-          <View style={styles.iconContainer}><Text style={styles.textcenter}>{type}</Text><AntDesign name="down" size={14} color="rgba(34, 42, 53, 0.6)" style={{ padding: 3 }} /></View>
+          <View style={styles.iconContainer}><Text style={type == 'Select type' ? styles.textcenter : {
+            textAlign: 'justify',
+            fontSize: 14,
+            color: '#004ADA',
+          }}>{type}</Text><AntDesign name="down" size={14} color={type == 'Select Type' ? "rgba(34, 42, 53, 0.6)" : '#004ADA'} style={{ padding: 3 }} /></View>
 
         </TouchableOpacity>
         <View >
@@ -154,7 +158,11 @@ const LoanFunding1 = (props) => {
             showblock ? (<View><Text style={styles.subHeading}>Bank Name</Text>
               <TextInput style={styles.inputStyle} placeholder='' placeholderTextColor="rgba(34, 42, 53, 0.6)" />
               <TouchableOpacity style={styles.buttonContainer1} onPress={() => setAccTypeModalVisible(!accTypeModalVisible)}  >
-                <View style={styles.iconContainer}><Text style={styles.textcenter}>{atype}</Text><AntDesign name="down" size={14} color="rgba(34, 42, 53, 0.6)" style={{ padding: 3 }} /></View>
+                <View style={styles.iconContainer}><Text style={atype == 'Account type' ? styles.textcenter : {
+                  textAlign: 'justify',
+                  fontSize: 14,
+                  color: '#004ADA',
+                }}>{atype}</Text><AntDesign name="down" size={14} color={atype == 'Select Type' ? "rgba(34, 42, 53, 0.6)" : '#004ADA'} style={{ padding: 3 }} /></View>
 
               </TouchableOpacity>
               <View >
@@ -248,65 +256,81 @@ const LoanFunding1 = (props) => {
           }
           <View>
             {
-              showblock2 ? (<View><Text style={{ backgroundColor: '#FFFFFF' }}>Select Mailing Address</Text>
-                <TouchableOpacity style={{
-                  flexDirection: 'row',
-                  justifyContent: 'space-around', borderColor: '#EEEFF2', backgroundColor: '#EEEFF2', borderWidth: 1, marginTop: 10, height: 50, width: 100 + "%"
-                }} onPress={() => {
-                  setOption1(!option1);
-                  setOption2(false)
-                }}>
-                  <View style={{ marginTop: 8 }}><RadioButton
-                    value="first"
-                    label=" "
-                    color='green'
-                    status={option1 ? 'checked' : 'unchecked'}
-                    onPress={() => {
-                      setOption1(!option1);
-                      setOption2(false)
-                    }}
-                  /></View><Text style={{ alignSelf: 'center' }}>Home Mailing Address </Text><AntDesign style={{ marginTop: 15 }} name={option1 ? 'up' : "down"} size={14} color="rgba(34, 42, 53, 0.6)" /></TouchableOpacity>
+              showblock2 ? (<View><Text style={{ backgroundColor: '#FFFFFF', marginBottom: 20 }}>Select Mailing Address</Text>
+                <View style={{ borderColor: option2 ? '#047E40' : '#EEEFF2', borderRadius: 10, backgroundColor: '#rgba(4, 126, 64, 0.1)', borderWidth: 1, marginTop: 10 }} >
+                  <TouchableOpacity style={{
+                    flexDirection: 'row',
+                    justifyContent: 'space-around', marginTop: 10, height: 50, width: 100 + "%"
+                  }} onPress={() => {
+                    setOption1(!option1);
+                    setOption2(false)
+                  }}>
+                    <RadioButton.Group
+                      value="first"
+                      label=" "
+                      color='green'
+                      status={option1 ? 'checked' : 'unchecked'}
+                      onValueChange={() => {
+                        setOption1(!option1);
+                        setOption2(false)
+                      }}
+                    >
+                      <View style={{ flexDirection: 'row' }}>
+                        <RadioButton value="first" />
+                        <View style={{ flexGrow: 1 }}>
+                          <View>
+                            <Text style={{ alignSelf: 'center' }}>Home Mailing Address </Text>
+                            <View>{option1 ? <View style={{ padding: 10 }}><Text>Back Board </Text>
+                              <Text>3190 Coral Rd Unit 23</Text>
+                              <Text>Miami Florida 33147 </Text></View> : null}
+                            </View>
+                          </View>
+                        </View>
+                        <AntDesign style={{ marginTop: 15 }} name={option1 ? 'up' : "down"} size={14} color="rgba(34, 42, 53, 0.6)" />
 
 
-                <View style={{ borderColor: '#EEEFF2', backgroundColor: '#EEEFF2', borderWidth: 1 }}>{option1 ? <View style={{ padding: 10 }}><Text>Back Board </Text>
-                  <Text>3190 Coral Rd Unit 23</Text>
-                  <Text>Miami Florida 33147 </Text></View> : null}
+                      </View>
+                    </RadioButton.Group>
+                  </TouchableOpacity>
+
 
 
                 </View>
+                <View style={{ borderColor: option2 ? '#047E40' : '#EEEFF2', borderRadius: 10, backgroundColor: '#rgba(4, 126, 64, 0.1)', borderWidth: 1, marginTop: 10 }} >
+                  <TouchableOpacity style={{
+                    flexDirection: 'row',
+                    justifyContent: 'space-around', marginTop: 10, height: 50, width: 100 + "%"
+                  }} onPress={() => {
+                    setOption2(!option2);
+                    setOption1(false);
+                  }}>
+                    <View style={{ marginTop: 8 }}><RadioButton
+                      value="first"
+                      label="Carto Base MAp"
+                      color='green'
+                      status={option2 ? 'checked' : 'unchecked'}
+                      onPress={() => {
+                        setOption2(!option2);
+                        setOption1(false);
+                      }}
+                    /></View ><Text style={{ alignSelf: 'center' }}>Street Residence Address </Text><AntDesign style={{ marginTop: 15 }} name={option2 ? 'up' : "down"} size={14} color="rgba(34, 42, 53, 0.6)" />
 
-                <TouchableOpacity style={{
-                  flexDirection: 'row',
-                  justifyContent: 'space-around', borderColor: '#EEEFF2', backgroundColor: '#EEEFF2', borderWidth: 1, marginTop: 10, height: 50, width: 100 + "%"
-                }} onPress={() => {
-                  setOption2(!option2);
-                  setOption1(false);
-                }}>
-                  <View style={{ marginTop: 8 }}><RadioButton
-                    value="first"
-                    label="Carto Base MAp"
-                    color='green'
-                    status={option2 ? 'checked' : 'unchecked'}
-                    onPress={() => {
-                      setOption2(!option2);
-                      setOption1(false);
-                    }}
-                  /></View><Text style={{ alignSelf: 'center' }}>Street Residence Address </Text><AntDesign style={{ marginTop: 15 }} name={option2 ? 'down' : "up"} size={14} color="rgba(34, 42, 53, 0.6)" />
 
 
+                  </TouchableOpacity>
+                  <View>{option2 ? <View style={{ padding: 10 }}><Text>Back Board </Text>
+                    <Text>3190 Coral Rd Unit 23</Text>
+                    <Text>Miami Florida 33147 </Text></View> : null}
 
-                </TouchableOpacity>
-                <View style={{ borderColor: '#EEEFF2', backgroundColor: '#EEEFF2', borderWidth: 1 }}>{option2 ? <View style={{ padding: 10 }}><Text>Back Board </Text>
-                  <Text>3190 Coral Rd Unit 23</Text>
-                  <Text>Miami Florida 33147 </Text></View> : null}
+
+                  </View>
 
 
                 </View>
-
-
               </View>) : (null)
             }
           </View>
+
 
 
         </View>
@@ -373,7 +397,7 @@ const styles = StyleSheet.create({
     borderColor: 'black',
     borderStyle: 'solid',
     borderWidth: 0,
-    borderRadius: 5
+    borderRadius: 10
   },
   headingFormat: {
     marginBottom: 10,
@@ -382,13 +406,13 @@ const styles = StyleSheet.create({
     //fontFamily: 'Poppins'
   },
   subHeading: {
-    marginBottom: 10,
+    marginBottom: 20,
     color: '#222A35',
-    // fontFamily: 'Poppins',
+    //   fontFamily:'Poppins',
     fontSize: 16,
-
+    fontWeight: 'bold',
   }, subHeading1: {
-    marginBottom: 10,
+    marginBottom: 30,
     color: 'grey',
     //   fontFamily:'Poppins',
     fontSize: 16,

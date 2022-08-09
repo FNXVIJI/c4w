@@ -206,10 +206,14 @@ const ContactDetails = (props) => {
       <ScrollView>
         <Text style={styles.headingFormat}>Contact Details</Text>
         <Text style={styles.subHeading1} >Please provide your contact details</Text>
-        <Text style={{ fontFamily: 'Poppins', color: 'black', marginBottom: 10 }}>Primary Phone Type</Text>
+        <Text style={styles.subHeading}>Primary Phone Type</Text>
         <View>
           <TouchableOpacity style={styles.buttonContainer1} onPress={() => setPNoModalVisible(!pNoModalVisible)}  >
-            <View style={styles.iconContainer}><Text style={styles.textcenter}>{ptype}</Text><AntDesign name="down" size={14} color="rgba(34, 42, 53, 0.6)" style={{ padding: 3 }} /></View>
+            <View style={styles.iconContainer}><Text style={ptype == 'Select Type' ? styles.textcenter : {
+              textAlign: 'justify',
+              fontSize: 14,
+              color: '#004ADA',
+            }}>{ptype}</Text><AntDesign name="down" size={14} color={ptype == 'Select Type' ? "rgba(34, 42, 53, 0.6)" : '#004ADA'} style={{ padding: 3 }} /></View>
           </TouchableOpacity>
 
           <Modal
@@ -267,9 +271,13 @@ const ContactDetails = (props) => {
             Primary phone number is invalid!
           </HelperText>) : (null)}
 
-          <Text style={{ fontFamily: 'Poppins', color: 'black', marginBottom: 10 }}>Secondary Phone Type</Text>
+          <Text style={styles.subHeading}>Secondary Phone Type</Text>
           <TouchableOpacity style={styles.buttonContainer1} onPress={() => setSNoModalVisible(!sNoModalVisible)}  >
-            <View style={styles.iconContainer}><Text style={styles.textcenter}>{stype}</Text><AntDesign name="down" size={14} color="rgba(34, 42, 53, 0.6)" style={{ padding: 3 }} /></View>
+            <View style={styles.iconContainer}><Text style={stype == 'Select Type' ? styles.textcenter : {
+              textAlign: 'justify',
+              fontSize: 14,
+              color: '#004ADA',
+            }}>{stype}</Text><AntDesign name="down" size={14} color={stype == 'Select Type' ? "rgba(34, 42, 53, 0.6)" : '#004ADA'} style={{ padding: 3 }} /></View>
           </TouchableOpacity>
 
           <Modal
@@ -328,9 +336,13 @@ const ContactDetails = (props) => {
           </HelperText>) : (null)}
 
 
-          <Text style={{ fontFamily: 'Poppins', color: 'black', marginBottom: 10 }}>Residence - Rent or Own</Text>
+          <Text style={styles.subHeading}>Residence - Rent or Own</Text>
           <TouchableOpacity style={styles.buttonContainer1} onPress={() => setRentModalVisible(!rentModalVisible)}  >
-            <View style={styles.iconContainer}><Text style={styles.textcenter}>{rtype}</Text><AntDesign name="down" size={14} color="rgba(34, 42, 53, 0.6)" style={{ padding: 3 }} /></View>
+            <View style={styles.iconContainer}><Text style={rtype == 'Select Type' ? styles.textcenter : {
+              textAlign: 'justify',
+              fontSize: 14,
+              color: '#004ADA',
+            }}>{rtype}</Text><AntDesign name="down" size={14} color={rtype == 'Select Type' ? "rgba(34, 42, 53, 0.6)" : '#004ADA'} style={{ padding: 3 }} /></View>
           </TouchableOpacity>
 
           <Modal
@@ -381,7 +393,11 @@ const ContactDetails = (props) => {
             {
               showblock3 ? (<View style={{ marginTop: 10, marginBottom: 10 }}>
                 <TouchableOpacity style={styles.buttonContainer1} onPress={() => setYearsModalVisible(!yearsModalVisible)}  >
-                  <View style={styles.iconContainer}><Text style={styles.textcenter}>{rrtype}</Text><AntDesign name="down" size={14} color="rgba(34, 42, 53, 0.6)" style={{ padding: 3 }} /></View>
+                  <View style={styles.iconContainer}><Text style={rrtype == 'Select Type' ? styles.textcenter : {
+                    textAlign: 'justify',
+                    fontSize: 14,
+                    color: '#004ADA',
+                  }}>{rrtype}</Text><AntDesign name="down" size={14} color={rrtype == 'Select Type' ? "rgba(34, 42, 53, 0.6)" : '#004ADA'} style={{ padding: 3 }} /></View>
                 </TouchableOpacity>
 
                 <Modal
@@ -449,7 +465,7 @@ const ContactDetails = (props) => {
         </View>
 
         <View style={{ marginLeft: 30 }}>
-          <Text style={{ color: 'black', fontFamily: 'Poppins', marginTop: 10, marginBottom: 10 }}>Home Mailing Address</Text>
+          <Text style={{ color: '#004ADA', fontWeight: 'bold', fontSize: 16, fontFamily: 'Poppins', marginTop: 10, marginBottom: 10 }}>Home Mailing Address</Text>
           <TextInput style={styles.inputStyle} placeholder='Address line 1' placeholderTextColor="rgba(34, 42, 53, 0.6)" value={homeAddress} onChangeText={(e) => {
             setHomeAddress(e)
             setIsValidHAddress1(true)
@@ -488,7 +504,7 @@ const ContactDetails = (props) => {
 
 
 
-          <Text style={{ color: 'black', fontFamily: 'Poppins', marginBottom: 10 }}>Residence Mailing Address</Text>
+          <Text style={{ color: '#004ADA', fontWeight: 'bold', fontSize: 16, fontFamily: 'Poppins', marginTop: 10, marginBottom: 10 }}>Residence Mailing Address</Text>
 
           <TouchableOpacity style={{
             backgroundColor: '#EEEFF2', marginBottom: 10,
@@ -590,7 +606,7 @@ const ContactDetails = (props) => {
 
             }}
           />
-          <Text style={styles.checkboxtext}>You agree that, in order for CREDITWORKS LLC to service this loan or to collect any amounts you owe, that we may from time to   <Text style={{ color: 'blue' }}
+          <Text style={styles.checkboxtext}>You agree that, in order for CREDITWORKS LLC to service this loan or to collect any amounts you owe, that we may from time to <Text style={{ color: 'blue' }}
             onPress={() => Linking.openURL('http://google.com')}>Read More ...</Text>  </Text>
         </View>
         {!isValidTerms ? (<HelperText type="error">
@@ -679,11 +695,11 @@ const styles = StyleSheet.create({
   subHeading: {
     marginBottom: 10,
     color: '#222A35',
-    // fontFamily: 'Poppins',
+    //   fontFamily:'Poppins',
     fontSize: 16,
-  },
-  subHeading1: {
-    marginBottom: 10,
+    fontWeight: 'bold',
+  }, subHeading1: {
+    marginBottom: 30,
     color: 'grey',
     //   fontFamily:'Poppins',
     fontSize: 16,
@@ -725,7 +741,7 @@ const styles = StyleSheet.create({
   textcenter: {
     textAlign: 'justify',
     fontSize: 14,
-    color: "rgba(34, 42, 53, 0.6)",
+    color: 'rgba(34, 42, 53, 0.6)',
   },
   textcenter1: {
     textAlign: 'justify',
@@ -737,6 +753,7 @@ const styles = StyleSheet.create({
     // padding:5,
     // flexWrap:'wrap',
     // marginRight:10,
+    color: 'rgba(34, 42, 53, 0.6)',
   },
   checkboxtext1: {
     marginLeft: 10,

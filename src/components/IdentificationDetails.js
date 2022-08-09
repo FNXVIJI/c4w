@@ -164,9 +164,9 @@ const IdentificationDetails = (props) => {
       <ScrollView contentContainerStyle={styles.container1}>
         <Text style={styles.headingFormat}>Identification Details</Text>
         <Text style={styles.subHeading1} >Please provide your Identification details</Text>
-        <Text style={styles.subHeading}>Employee Id</Text>
+        <Text style={styles.subHeading}>Employee ID</Text>
 
-        <TextInput style={styles.inputStyle} placeholder='Employee Id' placeholderTextColor="rgba(34, 42, 53, 0.6)" keyboardType="numeric" value={empId} onChangeText={(e) => {
+        <TextInput style={styles.inputStyle} placeholder='Employee ID' placeholderTextColor="rgba(34, 42, 53, 0.6)" keyboardType="numeric" value={empId} onChangeText={(e) => {
           setEmpId(e)
           setIsValidEmpId(true)
         }} right={<TextInput.Icon name="information" color='rgba(34, 42, 53, 0.6)' />} />
@@ -179,6 +179,7 @@ const IdentificationDetails = (props) => {
           placeholder="Date Of Birth"
           placeholderTextColor="rgba(34, 42, 53, 0.6)"
           value={moment(DOB).format("L")}
+          //value={DOB}
           right={
             <TextInput.Icon
               name="calendar"
@@ -378,7 +379,7 @@ const IdentificationDetails = (props) => {
               setChecked(!checked);
               setIsValidTerms(true);
             }}
-          /><Text style={styles.checkboxtext}>I Agree to <Text style={{ color: 'blue' }}
+          /><Text style={styles.checkboxtext}>I agree to <Text style={{ color: 'blue' }}
             onPress={() => Linking.openURL('http://google.com')}>Terms of service</Text>  and <Text style={{ color: 'blue' }}
               onPress={() => Linking.openURL('http://google.com')}>Private policy</Text></Text>
         </View>
@@ -409,16 +410,17 @@ const styles = StyleSheet.create({
 
 
   inputContainer: {
-    backgroundColor: '#EEEFF2'
+    backgroundColor: '#EEEFF2',
 
   },
   checkboxContainer: {
-    flexDirection: "row",
+    flexDirection: 'row',
     marginBottom: 20,
     padding: 20,
-    justifyContent: 'center'
+    alignContent: 'center'
   },
   buttonContainer: {
+    marginTop: 20,
     flexDirection: 'row',
     justifyContent: 'space-around'
   },
@@ -457,12 +459,13 @@ const styles = StyleSheet.create({
     // fontFamily: 'Poppins'
   },
   subHeading: {
-    marginBottom: 10,
+    marginBottom: 20,
     color: '#222A35',
     //   fontFamily:'Poppins',
     fontSize: 16,
+    fontWeight: 'bold',
   }, subHeading1: {
-    marginBottom: 10,
+    marginBottom: 30,
     color: 'grey',
     //   fontFamily:'Poppins',
     fontSize: 16,
@@ -475,6 +478,7 @@ const styles = StyleSheet.create({
     //  fontFamily: 'Poppins',
     marginBottom: 10,
     fontSize: 14,
+    //fontWeight: 'bold',
     paddingHorizontal: 10,
     borderWidth: 0,
     shadowOffset: {
@@ -491,12 +495,12 @@ const styles = StyleSheet.create({
     color: "rgba(34, 42, 53, 0.6)",
   },
   checkboxtext: {
-    padding: 5
-
+    fontSize: 16,
+    color: 'rgba(34, 42, 53, 0.6)',
   },
   checkbox: {
-
     color: "green",
+    size: 20
   },
 
   modalText: {

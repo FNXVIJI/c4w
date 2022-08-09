@@ -15,15 +15,14 @@ const QuickRelief = (props) => {
         <View style={styles.container}>
             <ScrollView>
                 <View>
-                    <Text style={styles.headingFormat}>You have selected QuickRelief</Text>
-                    <Text style={styles.headingFormat}>Loan Details</Text>
+                    <Text style={styles.headingFormat}>You have selected QuickRelief Loan Details</Text>
                     <Text style={styles.subHeading1}>*Only one loan per employee is permitted to be outstanding at any time. Our loan products do not charge prepayment penalties or late fees.</Text>
-                    <Card style={styles.cardFormat1}><View style={styles.cellFormat}><Text>Loan Amount</Text><Text>$500.00</Text></View></Card>
-                    <Card style={styles.cardFormat22}><View style={styles.cellFormat}><Text>Terms in Months</Text><Text>05</Text></View></Card>
-                    <Card style={styles.cardFormat11}><View style={styles.cellFormat}><Text>Number of Payments</Text><Text>22</Text></View></Card>
-                    <Card style={styles.cardFormat22}><View style={styles.cellFormat}><Text>Estimated Loan Payment</Text><Text>$23.86</Text></View></Card>
-                    <Card style={styles.cardFormat11}><View style={styles.cellFormat}><Text>Estimated First Payment Due Date</Text><Text>01/07/2022</Text></View></Card>
-                    <Card style={styles.cardFormat2}><View style={styles.cellFormat}><Text>Payment Frequency</Text><Text>Weekly</Text></View></Card>
+                    <View style={styles.cardFormat1}><View style={styles.cellFormat}><Text>Loan Amount</Text><Text>$500.00</Text></View></View>
+                    <View style={styles.cardFormat22}><View style={styles.cellFormat}><Text>Terms in Months</Text><Text>05</Text></View></View>
+                    <View style={styles.cardFormat11}><View style={styles.cellFormat}><Text>Number of Payments</Text><Text>22</Text></View></View>
+                    <View style={styles.cardFormat22}><View style={styles.cellFormat}><Text>Estimated Loan Payment</Text><Text>$23.86</Text></View></View>
+                    <View style={styles.cardFormat11}><View style={styles.cellFormat}><Text>Estimated First Payment Due Date</Text><Text>01/07/2022</Text></View></View>
+                    <View style={styles.cardFormat2}><View style={styles.cellFormat}><Text>Payment Frequency</Text><Text>Weekly</Text></View></View>
                     <View style={styles.info}><AntDesign name="infocirlce" size={24} color="grey" /><Text style={styles.infoText}>CREDITWORKS LLC charges a $25.00 Credit Investigation Fee on all loans. The Fee is used to offset the cost of investigating and processing your loan application.</Text></View>
                     <View style={styles.info}><AntDesign name="infocirlce" size={24} color="grey" /><Text style={styles.infoText}>Your loan application is subject to application and employment verifications. Other terms and conditions apply. Not all applicants will qualify for a loan.</Text></View>
                     <View style={styles.info}><AntDesign name="infocirlce" size={24} color="grey" /><Text style={styles.infoText}>Your loan information is accurate as of today's date. If your loan application is approved on a subsequent date, your loan terms may be recalculated as of the date that you sign your loan documents.</Text></View>
@@ -67,7 +66,7 @@ const styles = StyleSheet.create({
         fontSize: 16,
     },
     subHeading1: {
-        marginBottom: 10,
+        marginBottom: 20,
         color: 'grey',
         //   fontFamily:'Poppins',
         fontSize: 16,
