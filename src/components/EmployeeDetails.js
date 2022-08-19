@@ -152,17 +152,17 @@ const EmployeeDetails = (props) => {
         {!isValidPayCycle ? (<HelperText type="error">
           Paycycle is invalid!
         </HelperText>) : (null)}
-        <TextInput style={styles.inputStyle} label="Annual Salary"
+        <TextInput style={styles.inputStyle}
           value={salary}
           onChangeText={(e) => {
             setSalary(e)
             setIsValidSalary(true)
-          }} placeholder='Annual Salary' placeholderTextColor="rgba(34, 42, 53, 0.6)" keyboardType='numeric' right={<TextInput.Affix text="In $" />} />
+          }} label='Annual Salary' placeholderTextColor="rgba(34, 42, 53, 0.6)" keyboardType='numeric' underlineColor="transparent" right={<TextInput.Affix text="In $" />} />
         {!isValidSalary ? (<HelperText type="error">
           Salary is invalid!
         </HelperText>) : (null)}
 
-        <TextInput style={styles.inputStyle} placeholder='Grace Pay Per Period' placeholderTextColor="rgba(34, 42, 53, 0.6)" keyboardType='numeric' value={payPeriod} onChangeText={(e) => {
+        <TextInput style={styles.inputStyle} label='Grace Pay Per Period' placeholderTextColor="rgba(34, 42, 53, 0.6)" underlineColor="transparent" keyboardType='numeric' value={payPeriod} onChangeText={(e) => {
           setPayPeriod(e)
           setIsValidGracePayPeriod(true)
         }} right={<TextInput.Icon name="information" color='rgba(34, 42, 53, 0.6)' />} />
@@ -171,8 +171,8 @@ const EmployeeDetails = (props) => {
         </HelperText>) : (null)}
         <TextInput
           style={styles.inputStyle}
-          placeholder="Date Of Hire"
-          placeholderTextColor="rgba(34, 42, 53, 0.6)"
+          label="Date Of Hire"
+          placeholderTextColor="rgba(34, 42, 53, 0.6)" underlineColor="transparent"
           value={moment(DOH).format("L")}
           right={
             <TextInput.Icon
@@ -289,9 +289,19 @@ const EmployeeDetails = (props) => {
               setChecked(!checked);
               setIsValidEmploymentTerms(true);
             }}
-          /><Text style={styles.checkboxtext}>Authorization for Employer to Share Information with CreditWorks LLC
-            <Text style={{ fontSize: 12, color: 'rgba(34, 42, 53, 0.6)' }}> I authorize my employer to share my employment information with CREDITWORKS LLC, as requested by CREDITWORKS</Text><Text style={{ color: 'blue' }}
-              onPress={() => Linking.openURL('http://google.com')}>  Read More ...</Text></Text>
+          /><View>
+            <Text style={styles.checkboxtext}>
+              Authorization for Employer to Share Information with CreditWorks
+              LLC
+            </Text>
+            <Text style={{ fontSize: 12, color: 'rgba(34, 42, 53, 0.6)' }}>
+              I authorize my employer to share my employment information with
+              CREDITWORKS LLC, as requested by CREDITWORKS<Text style={{ color: 'blue' }}
+              > Read More ...
+              </Text>
+            </Text>
+
+          </View>
         </View>
         {!isValidEmploymentTerms ? (<HelperText type="error">
           Terms of Employement is invalid!
@@ -328,7 +338,6 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     marginBottom: 20,
     padding: 20,
-
     justifyContent: 'center'
 
   },
@@ -337,7 +346,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-around'
   },
   textcenter1: {
-    textAlign: 'justify',
+    textAlign: 'center',
     fontSize: 14,
     color: "rgba(34, 42, 53, 0.6)",
     marginBottom: 10
@@ -368,7 +377,7 @@ const styles = StyleSheet.create({
     borderColor: 'black',
     borderStyle: 'solid',
     borderWidth: 0,
-    borderRadius: 5
+    borderRadius: 10
   },
   headingFormat: {
     marginBottom: 10,
@@ -384,7 +393,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   }, subHeading1: {
     marginBottom: 30,
-    color: 'grey',
+    color: 'rgba(34, 42, 53, 0.6)',
     //   fontFamily:'Poppins',
     fontSize: 16,
   },

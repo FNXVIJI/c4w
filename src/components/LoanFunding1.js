@@ -9,10 +9,10 @@ const LoanFunding1 = (props) => {
   const [accTypeModalVisible, setAccTypeModalVisible] = useState(false);
   const [type, settype] = useState('Select type');
   const [atype, setAtype] = useState('Account type');
-  const [showblock, setShowBlock] = useState(Boolean);
-  const [showblock2, setShowBlock2] = useState(Boolean);
-  const [option1, setOption1] = useState(Boolean);
-  const [option2, setOption2] = useState(Boolean);
+  const [showblock, setShowBlock] = useState(false);
+  const [showblock2, setShowBlock2] = useState(false);
+  const [option1, setOption1] = useState('');
+  const [option2, setOption2] = useState(false);
   const [isValidFunding, setIsValidFunding] = useState(true);
   const [isValidAccType, setIsValidAccType] = useState(true);
   const [routingNumber, setRoutingNumber] = useState(Number);
@@ -156,7 +156,7 @@ const LoanFunding1 = (props) => {
         <View>
           {
             showblock ? (<View><Text style={styles.subHeading}>Bank Name</Text>
-              <TextInput style={styles.inputStyle} placeholder='' placeholderTextColor="rgba(34, 42, 53, 0.6)" />
+              <TextInput style={styles.inputStyle} label='Bank Name' placeholderTextColor="rgba(34, 42, 53, 0.6)" />
               <TouchableOpacity style={styles.buttonContainer1} onPress={() => setAccTypeModalVisible(!accTypeModalVisible)}  >
                 <View style={styles.iconContainer}><Text style={atype == 'Account type' ? styles.textcenter : {
                   textAlign: 'justify',
@@ -209,7 +209,7 @@ const LoanFunding1 = (props) => {
               {!isValidAccType ? (<HelperText type="error">
                 Account Type  is invalid!
               </HelperText>) : (null)}
-              <TextInput style={styles.inputStyle} placeholder='Bank Routing Number' placeholderTextColor="rgba(34, 42, 53, 0.6)" keyboardType='numeric' onChangeText={(e) => {
+              <TextInput style={styles.inputStyle} label='Bank Routing Number' underlineColor="transparent" placeholderTextColor="rgba(34, 42, 53, 0.6)" keyboardType='numeric' onChangeText={(e) => {
                 setRoutingNumber(e);
                 setIsSameRoutingNo(true);
                 setIsValidRoutingNumber(true);
@@ -220,7 +220,7 @@ const LoanFunding1 = (props) => {
               {!isSameRoutingNo ? (<HelperText type="error">
                 Routing number does not match with  Confirm Routing number!
               </HelperText>) : (null)}
-              <TextInput style={styles.inputStyle} keyboardType='numeric' placeholder='Confirm Bank Routing Number' placeholderTextColor="rgba(34, 42, 53, 0.6)" onChangeText={(e) => {
+              <TextInput style={styles.inputStyle} underlineColor="transparent" keyboardType='numeric' label='Confirm Bank Routing Number' placeholderTextColor="rgba(34, 42, 53, 0.6)" onChangeText={(e) => {
                 setConfirmRoutingNumber(e);
                 setIsValidRoutingNumber(true);
                 setIsSameRoutingNo(true);
@@ -231,7 +231,7 @@ const LoanFunding1 = (props) => {
               {!isSameRoutingNo ? (<HelperText type="error">
                 Confirm Routing number does not match with Routing number!
               </HelperText>) : (null)}
-              <TextInput style={styles.inputStyle} keyboardType='numeric' placeholder='Account Number' placeholderTextColor="rgba(34, 42, 53, 0.6)" onChangeText={(e) => {
+              <TextInput style={styles.inputStyle} underlineColor="transparent" keyboardType='numeric' label='Account Number' placeholderTextColor="rgba(34, 42, 53, 0.6)" onChangeText={(e) => {
                 setAccountNumber(e);
                 setIsValidAccountNumber(true);
                 setIsSameAccNo(true);
@@ -242,7 +242,7 @@ const LoanFunding1 = (props) => {
               {!isValidAccountNumber ? (<HelperText type="error">
                 Account Number  is invalid!
               </HelperText>) : (null)}
-              <TextInput style={styles.inputStyle} keyboardType='numeric' placeholder='Confirm Account Number' placeholderTextColor="rgba(34, 42, 53, 0.6)" onChangeText={(e) => {
+              <TextInput style={styles.inputStyle} underlineColor="transparent" keyboardType='numeric' label='Confirm Account Number' placeholderTextColor="rgba(34, 42, 53, 0.6)" onChangeText={(e) => {
                 setConfirmAccountNumber(e);
                 setIsValidAccountNumber(true);
                 setIsSameAccNo(true);
@@ -256,86 +256,71 @@ const LoanFunding1 = (props) => {
           }
           <View>
             {
-              showblock2 ? (<View><Text style={{ backgroundColor: '#FFFFFF', marginBottom: 20 }}>Select Mailing Address</Text>
-                <View style={{ borderColor: option2 ? '#047E40' : '#EEEFF2', borderRadius: 10, backgroundColor: '#rgba(4, 126, 64, 0.1)', borderWidth: 1, marginTop: 10 }} >
-                  <TouchableOpacity style={{
-                    flexDirection: 'row',
-                    justifyContent: 'space-around', marginTop: 10, height: 50, width: 100 + "%"
-                  }} onPress={() => {
-                    setOption1(!option1);
-                    setOption2(false)
-                  }}>
-                    <RadioButton.Group
-                      value="first"
-                      label=" "
-                      color='green'
-                      status={option1 ? 'checked' : 'unchecked'}
-                      onValueChange={() => {
-                        setOption1(!option1);
-                        setOption2(false)
-                      }}
-                    >
-                      <View style={{ flexDirection: 'row' }}>
-                        <RadioButton value="first" />
-                        <View style={{ flexGrow: 1 }}>
-                          <View>
-                            <Text style={{ alignSelf: 'center' }}>Home Mailing Address </Text>
-                            <View>{option1 ? <View style={{ padding: 10 }}><Text>Back Board </Text>
-                              <Text>3190 Coral Rd Unit 23</Text>
-                              <Text>Miami Florida 33147 </Text></View> : null}
-                            </View>
-                          </View>
-                        </View>
-                        <AntDesign style={{ marginTop: 15 }} name={option1 ? 'up' : "down"} size={14} color="rgba(34, 42, 53, 0.6)" />
+              showblock2 ? (<View><Text style={styles.subHeading}>Select Mailing Address</Text>
 
+                <RadioButton.Group
+                  value={option1}
+                  label=" "
+                  color='green'
+                  status={option1 ? 'checked' : 'unchecked'}
+                  onValueChange={(e) => {
+                    setOption1(e);
+                    // setOption2(false)
+                  }}
+                >
+                  <TouchableOpacity style={{
+                    borderColor: option1 == 'first' ? '#047E40' : '#EEEFF2', borderRadius: 10, backgroundColor: '#rgba(4, 126, 64, 0.1)', borderWidth: 1,
+                    marginTop: 10, width: 100 + "%"
+                  }}
+                    onPress={() => {
+                      setOption1('first');
+
+                    }}>
+                    <View style={{ flexDirection: 'row' }}>
+                      <RadioButton value="first" />
+                      <View style={{ flexGrow: 1, paddingTop: 10, alignItems: 'flex-start' }}>
+
+                        <Text style={{ paddingBottom: 10 }}>Home Mailing Address </Text>
+                        <View>{option1 == 'first' ? <View style={{ paddingVertical: 10, borderTopWidth: 1, borderTopColor: "rgba(34, 42, 53, 0.1)" }}><Text>Back Board </Text>
+                          <Text>3190 Coral Rd Unit 23</Text>
+                          <Text>Miami Florida 33147 </Text></View> : null}
+                        </View>
 
                       </View>
-                    </RadioButton.Group>
+                      <AntDesign style={{ padding: 15 }} name={option1 == 'first' ? 'up' : "down"} size={14} color="rgba(34, 42, 53, 0.6)" />
+                    </View>
                   </TouchableOpacity>
-
-
-
-                </View>
-                <View style={{ borderColor: option2 ? '#047E40' : '#EEEFF2', borderRadius: 10, backgroundColor: '#rgba(4, 126, 64, 0.1)', borderWidth: 1, marginTop: 10 }} >
                   <TouchableOpacity style={{
-                    flexDirection: 'row',
-                    justifyContent: 'space-around', marginTop: 10, height: 50, width: 100 + "%"
-                  }} onPress={() => {
-                    setOption2(!option2);
-                    setOption1(false);
-                  }}>
-                    <View style={{ marginTop: 8 }}><RadioButton
-                      value="first"
-                      label="Carto Base MAp"
-                      color='green'
-                      status={option2 ? 'checked' : 'unchecked'}
-                      onPress={() => {
-                        setOption2(!option2);
-                        setOption1(false);
-                      }}
-                    /></View ><Text style={{ alignSelf: 'center' }}>Street Residence Address </Text><AntDesign style={{ marginTop: 15 }} name={option2 ? 'up' : "down"} size={14} color="rgba(34, 42, 53, 0.6)" />
+                    borderColor: option1 == 'second' ? '#047E40' : '#EEEFF2', borderRadius: 10, backgroundColor: '#rgba(4, 126, 64, 0.1)', borderWidth: 1,
+                    marginTop: 10, width: 100 + "%"
+                  }}
+                    onPress={() => {
+                      setOption1('second');
 
+                    }}>
 
+                    <View style={{ flexDirection: 'row' }}>
+                      <RadioButton value="second" />
+                      <View style={{ flexGrow: 1, paddingTop: 10, alignItems: 'flex-start' }}>
+
+                        <Text style={{ paddingBottom: 10 }}>Street Residence Address</Text>
+                        <View>{option1 == 'second' ? <View style={{ paddingVertical: 10, borderTopWidth: 1, borderTopColor: "rgba(34, 42, 53, 0.1)" }}><Text>Back Board </Text>
+                          <Text>3190 Coral Rd Unit 23</Text>
+                          <Text>Miami Florida 33147 </Text></View> : null}
+                        </View>
+
+                      </View>
+                      <AntDesign style={{ padding: 15 }} name={option1 == 'second' ? 'up' : "down"} size={14} color="rgba(34, 42, 53, 0.6)" />
+                    </View>
 
                   </TouchableOpacity>
-                  <View>{option2 ? <View style={{ padding: 10 }}><Text>Back Board </Text>
-                    <Text>3190 Coral Rd Unit 23</Text>
-                    <Text>Miami Florida 33147 </Text></View> : null}
+                </RadioButton.Group>
 
 
-                  </View>
-
-
-                </View>
               </View>) : (null)
             }
           </View>
-
-
-
         </View>
-
-
       </ScrollView>
       <View style={styles.buttonContainer}>
         <TouchableOpacity style={styles.backButton}><Text style={styles.backButtonText} onPress={() => previousForm()}>Back</Text></TouchableOpacity>
@@ -406,14 +391,14 @@ const styles = StyleSheet.create({
     //fontFamily: 'Poppins'
   },
   subHeading: {
-    marginBottom: 20,
+    marginVertical: 20,
     color: '#222A35',
     //   fontFamily:'Poppins',
     fontSize: 16,
     fontWeight: 'bold',
   }, subHeading1: {
-    marginBottom: 30,
-    color: 'grey',
+    marginBottom: 20,
+    color: 'rgba(34, 42, 53, 0.6)',
     //   fontFamily:'Poppins',
     fontSize: 16,
   },

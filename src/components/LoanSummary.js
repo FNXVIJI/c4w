@@ -14,21 +14,21 @@ const LoanSummary = (props) => {
         <View style={styles.container}>
             <ScrollView>
                 <View>
-                    <Text style={styles.headingFormat}>My Loan Summary Good faith estimate</Text>
+                    <Text style={styles.headingFormat}>My Loan Summary - Good Faith Estimate</Text>
                     <Text style={styles.subHeading1}>Please check your loan summary</Text>
-                    <Card style={styles.cardFormat1}><View style={styles.cellFormat}><Text style={{ flexWrap: "wrap" }}>Loan proceeds paid directly to borrower</Text><Text>$500.00</Text></View></Card>
-                    <Card style={styles.cardFormat22}><View style={styles.cellFormat}><Text>Credit investigation fee</Text><Text>05</Text></View></Card>
-                    <Card style={styles.cardFormat11}><View style={styles.cellFormat}><Text>Loan amount</Text><Text>05</Text></View></Card>
-                    <Card style={styles.cardFormat22}><View style={styles.cellFormat}><Text>Loan term in months</Text><Text>05</Text></View></Card>
-                    <Card style={styles.cardFormat11}><View style={styles.cellFormat}><Text>No of Pay Periods(payments)</Text><Text>05</Text></View></Card>
-                    <Card style={styles.cardFormat22}><View style={styles.cellFormat}><Text>Annual Simple Interest Rate</Text><Text>05</Text></View></Card>
-                    <Card style={styles.cardFormat11}><View style={styles.cellFormat}><Text>Annual Percentage rate</Text><Text>05</Text></View></Card>
-                    <Card style={styles.cardFormat22}><View style={styles.cellFormat}><Text>First Loan payment date</Text><Text>05</Text></View></Card>
-                    <Card style={styles.cardFormat11}><View style={styles.cellFormat}><Text>Loan funding Method</Text><Text>05</Text></View></Card>
-                    <Card style={styles.cardFormat22}><View style={styles.cellFormat}><Text>Loan term in months</Text><Text>05</Text></View></Card>
-                    <Card style={styles.cardFormat2}><View style={styles.cellFormat}><Text>Check Mailing Address</Text><Text>Home Address</Text></View></Card>
+                    <View style={styles.cellFormatTop}><Text style={{ flexWrap: "wrap" }}>Loan proceeds paid directly to borrower</Text><Text>$500.00</Text></View>
+                    <View style={styles.cellFormatEven}><Text>Credit investigation fee</Text><Text>05</Text></View>
+                    <View style={styles.cellFormat}><Text>Loan amount</Text><Text>05</Text></View>
+                    <View style={styles.cellFormatEven}><Text>Loan term in months</Text><Text>05</Text></View>
+                    <View style={styles.cellFormat}><Text>No of Pay Periods(payments)</Text><Text>05</Text></View>
+                    <View style={styles.cellFormatEven}><Text>Annual Simple Interest Rate</Text><Text>05</Text></View>
+                    <View style={styles.cellFormat}><Text>Annual Percentage rate</Text><Text>05</Text></View>
+                    <View style={styles.cellFormatEven}><Text>First Loan payment date</Text><Text>05</Text></View>
+                    <View style={styles.cellFormat}><Text>Loan funding Method</Text><Text>05</Text></View>
+                    <View style={styles.cellFormatEven}><Text>Loan term in months</Text><Text>05</Text></View>
+                    <View style={styles.cellFormatBottom}><Text>Check Mailing Address</Text><Text>Home Address</Text></View>
                 </View>
-                <View style={styles.info}><AntDesign name="infocirlce" size={24} color="grey" /><Text style={styles.infoText}>CREDITWORKS LLC charges a $25.00 Credit Investigation Fee on all loans. The Fee is used to offset the cost of investigating and processing your loan application.</Text></View>
+                <View style={styles.info}><AntDesign name="infocirlce" size={18} color="grey" /><Text style={styles.infoText}>CREDITWORKS LLC charges a $25.00 Credit Investigation Fee on all loans. The Fee is used to offset the cost of investigating and processing your loan application.</Text></View>
             </ScrollView>
             <TouchableOpacity style={styles.nextButtonContainer1} onPress={() => applyLoan()}><Text style={styles.nextButton}>Submit Application</Text></TouchableOpacity>
         </View>
@@ -50,7 +50,7 @@ const styles = StyleSheet.create({
         justifyContent: 'space-around'
     },
     headingFormat: {
-        margin: 10,
+        marginBottom: 10,
         fontWeight: 'bold',
         fontSize: 30,
         // fontFamily: 'Poppins'
@@ -62,7 +62,7 @@ const styles = StyleSheet.create({
         fontSize: 16,
     },
     subHeading1: {
-        margin: 10,
+        marginBottom: 30,
         color: 'grey',
         //   fontFamily:'Poppins',
         fontSize: 16,
@@ -112,36 +112,40 @@ const styles = StyleSheet.create({
         textAlign: "center",
         //fontFamily:'Poppins',
         color: 'white',
-    }, cellFormat: {
+    }, cellFormatBottom: {
         flexDirection: 'row',
         justifyContent: 'space-between',
-    }, cardFormat1: {
-        borderTopLeftRadius: 10,
-        borderTopRightRadius: 10,
-        borderColor: '#F2F8F4',
-        backgroundColor: '#F2F8F4',
-        padding: 10,
-        borderWidth: 2,
-    }, cardFormat2: {
+        borderWidth: 1,
         borderColor: '#F2F8F4',
         backgroundColor: '#F2F8F4',
         padding: 10,
         borderBottomLeftRadius: 10,
         borderBottomRightRadius: 10,
-        borderWidth: 2,
         marginBottom: 10
-
-    }, cardFormat11: {
-        borderWidth: 2,
+    }, cellFormatTop: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        borderWidth: 1,
         borderColor: '#F2F8F4',
         backgroundColor: '#F2F8F4',
         padding: 10,
-    }, cardFormat22: {
+        borderTopLeftRadius: 10,
+        borderTopRightRadius: 10
+    },
+    cellFormatEven: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
         borderColor: '#F2F8F4',
         backgroundColor: '#FFFFFF',
         padding: 10,
-        borderWidth: 2,
-
+        borderWidth: 1,
+    },
+    cellFormat: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        borderWidth: 0,
+        backgroundColor: '#F2F8F4',
+        padding: 10,
     }, info: {
         flexDirection: 'row',
         margin: 10
@@ -149,6 +153,7 @@ const styles = StyleSheet.create({
         color: 'rgba(34, 42, 53, 0.6)',
         marginLeft: 10,
     }, nextButtonContainer1: {
+        marginTop: 30,
         backgroundColor: '#004ADA',
         borderRadius: 10,
         shadowColor: 'rgba(0, 74, 218, 0.25)',
@@ -166,6 +171,7 @@ const styles = StyleSheet.create({
         textAlign: "center",
         //fontFamily:'Poppins',
         color: 'white',
+        fontSize: 16
     },
 
 

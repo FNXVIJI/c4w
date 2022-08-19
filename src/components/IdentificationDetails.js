@@ -166,7 +166,7 @@ const IdentificationDetails = (props) => {
         <Text style={styles.subHeading1} >Please provide your Identification details</Text>
         <Text style={styles.subHeading}>Employee ID</Text>
 
-        <TextInput style={styles.inputStyle} placeholder='Employee ID' placeholderTextColor="rgba(34, 42, 53, 0.6)" keyboardType="numeric" value={empId} onChangeText={(e) => {
+        <TextInput style={styles.inputStyle} label='Employee ID' placeholderTextColor="rgba(34, 42, 53, 0.6)" keyboardType="numeric" underlineColor="transparent" value={empId} onChangeText={(e) => {
           setEmpId(e)
           setIsValidEmpId(true)
         }} right={<TextInput.Icon name="information" color='rgba(34, 42, 53, 0.6)' />} />
@@ -176,7 +176,7 @@ const IdentificationDetails = (props) => {
         </HelperText>) : (null)}
         <TextInput
           style={styles.inputStyle}
-          placeholder="Date Of Birth"
+          label="Date Of Birth"
           placeholderTextColor="rgba(34, 42, 53, 0.6)"
           value={moment(DOB).format("L")}
           //value={DOB}
@@ -194,12 +194,12 @@ const IdentificationDetails = (props) => {
           Date of birth  is invalid!
         </HelperText>) : (null)}
 
-        <TextInput style={styles.inputStyle} placeholder='Social Security Number' placeholderTextColor="rgba(34, 42, 53, 0.6)" keyboardType="numeric" secureTextEntry={showSSN ? false : true} value={SSN} onChangeText={(e) => {
+        <TextInput style={styles.inputStyle} label='Social Security Number' placeholderTextColor="rgba(34, 42, 53, 0.6)" underlineColor="transparent" keyboardType="numeric" secureTextEntry={showSSN ? false : true} value={SSN} onChangeText={(e) => {
           setSSN(e)
           setIsValidSSN(true)
           setIsSameSSN(true)
         }
-        } right={<TextInput.Icon name={showSSN ? 'eye' : 'eye-off'} color='rgba(34, 42, 53, 0.6)' onPress={() => setShowSSN(!showSSN)}
+        } right={<TextInput.Icon name={showSSN ? 'eye-off' : 'eye'} color='rgba(34, 42, 53, 0.6)' onPress={() => setShowSSN(!showSSN)}
         />} />
 
         {!isValidSSN ? (<HelperText type="error">
@@ -209,11 +209,11 @@ const IdentificationDetails = (props) => {
           Social Security Number donot match with Confirm Social security Number
         </HelperText>) : (null)}
 
-        <TextInput style={styles.inputStyle} placeholder='Confirm Social Security Number' placeholderTextColor="rgba(34, 42, 53, 0.6)" keyboardType="numeric" secureTextEntry={showCSSN ? false : true} value={CSSN} onChangeText={(e) => {
+        <TextInput style={styles.inputStyle} label="Confirm Social Security Number" placeholderTextColor="rgba(34, 42, 53, 0.6)" underlineColor="transparent" keyboardType="numeric" secureTextEntry={showCSSN ? false : true} value={CSSN} onChangeText={(e) => {
           setCSSN(e)
           setIsValidCSSN(true)
           setIsSameSSN(true);
-        }} right={<TextInput.Icon name={showCSSN ? 'eye' : 'eye-off'} color='rgba(34, 42, 53, 0.6)' onPress={() => setShowCSSN(!showCSSN)} />} />
+        }} right={<TextInput.Icon name={showCSSN ? 'eye-off' : 'eye'} color='rgba(34, 42, 53, 0.6)' onPress={() => setShowCSSN(!showCSSN)} />} />
 
         {!isValidCSSN ? (<HelperText type="error">
           Confirm Social Security Number is invalid!
@@ -279,7 +279,7 @@ const IdentificationDetails = (props) => {
         </View>
         <View>
           {
-            showLicense ? (<View style={{ marginLeft: 30 }}><TextInput style={styles.inputStyle} placeholder='State of Issusance' placeholderTextColor="rgba(34, 42, 53, 0.6)" value={stateIssue} onChangeText={(e) => {
+            showLicense ? (<View style={{ marginLeft: 30 }}><TextInput style={styles.inputStyle} label='State of Issusance' underlineColor="transparent" placeholderTextColor="rgba(34, 42, 53, 0.6)" value={stateIssue} onChangeText={(e) => {
               setStateIssue(e)
               setIsValidStateIssue(true)
             }}></TextInput>
@@ -287,7 +287,7 @@ const IdentificationDetails = (props) => {
               {!isValidStateIssue ? (<HelperText type="error">
                 State is invalid!
               </HelperText>) : (null)}
-              <TextInput style={styles.inputStyle} placeholder='License Number' placeholderTextColor="rgba(34, 42, 53, 0.6)" keyboardType="numeric" value={AINNo} onChangeText={(e) => {
+              <TextInput style={styles.inputStyle} label='License Number' placeholderTextColor="rgba(34, 42, 53, 0.6)" underlineColor="transparent" keyboardType="numeric" value={AINNo} onChangeText={(e) => {
                 setAINNo(e)
                 setIsValidAINNo(true)
               }}></TextInput>
@@ -300,7 +300,7 @@ const IdentificationDetails = (props) => {
 
         <View>
           {
-            showAdhaar ? (<View style={{ marginLeft: 30 }}><TextInput style={styles.inputStyle} placeholder='State of Issusance' placeholderTextColor="rgba(34, 42, 53, 0.6)" value={stateIssue} onChangeText={(e) => {
+            showAdhaar ? (<View style={{ marginLeft: 30 }}><TextInput style={styles.inputStyle} label='State of Issusance' underlineColor="transparent" placeholderTextColor="rgba(34, 42, 53, 0.6)" value={stateIssue} onChangeText={(e) => {
               setStateIssue(e)
               setIsValidStateIssue(true)
             }}></TextInput>
@@ -309,7 +309,7 @@ const IdentificationDetails = (props) => {
                 State is invalid!
               </HelperText>) : (null)}
 
-              <TextInput style={styles.inputStyle} placeholder='Adhaar Number' placeholderTextColor="rgba(34, 42, 53, 0.6)" keyboardType="numeric" value={AINNo} onChangeText={(e) => {
+              <TextInput style={styles.inputStyle} label='Adhaar Number' placeholderTextColor="rgba(34, 42, 53, 0.6)" keyboardType="numeric" underlineColor="transparent" value={AINNo} onChangeText={(e) => {
                 setAINNo(e)
                 setIsValidAINNo(true)
               }}></TextInput>
@@ -373,15 +373,21 @@ const IdentificationDetails = (props) => {
 
 
         <View style={styles.checkboxContainer}>
+
           <Checkbox color='green'
             status={checked ? 'checked' : 'unchecked'}
             onPress={() => {
               setChecked(!checked);
               setIsValidTerms(true);
             }}
-          /><Text style={styles.checkboxtext}>I agree to <Text style={{ color: 'blue' }}
-            onPress={() => Linking.openURL('http://google.com')}>Terms of service</Text>  and <Text style={{ color: 'blue' }}
-              onPress={() => Linking.openURL('http://google.com')}>Private policy</Text></Text>
+
+          />
+
+
+          <Text style={styles.checkboxtext}>I agree to </Text>
+          <Text style={{ color: 'blue' }}
+          >Terms of service and </Text><Text style={{ color: 'blue' }}>Privacy policy</Text>
+
         </View>
         {!isValidTerms ? (<HelperText type="error">
           Terms and conditions is invalid!
@@ -416,8 +422,8 @@ const styles = StyleSheet.create({
   checkboxContainer: {
     flexDirection: 'row',
     marginBottom: 20,
-    padding: 20,
-    alignContent: 'center'
+    paddingVertical: 20,
+    alignItems: 'center'
   },
   buttonContainer: {
     marginTop: 20,
@@ -450,7 +456,7 @@ const styles = StyleSheet.create({
     borderColor: 'black',
     borderStyle: 'solid',
     borderWidth: 0,
-    borderRadius: 5
+    borderRadius: 10
   },
   headingFormat: {
     marginBottom: 10,
@@ -459,14 +465,14 @@ const styles = StyleSheet.create({
     // fontFamily: 'Poppins'
   },
   subHeading: {
-    marginBottom: 20,
+    marginVertical: 20,
     color: '#222A35',
     //   fontFamily:'Poppins',
     fontSize: 16,
     fontWeight: 'bold',
   }, subHeading1: {
-    marginBottom: 30,
-    color: 'grey',
+    marginBottom: 20,
+    color: 'rgba(34, 42, 53, 0.6)',
     //   fontFamily:'Poppins',
     fontSize: 16,
   },
@@ -489,13 +495,13 @@ const styles = StyleSheet.create({
 
   },
   textcenter: {
-    textAlign: 'justify',
+    textAlign: 'center',
     fontSize: 14,
 
     color: "rgba(34, 42, 53, 0.6)",
   },
   checkboxtext: {
-    fontSize: 16,
+    fontSize: 14,
     color: 'rgba(34, 42, 53, 0.6)',
   },
   checkbox: {

@@ -22,20 +22,23 @@ const FlexibleLifeline = (props) => {
                 />
                 <Card style={styles.cardFormat1}>
                     <Text style={styles.subHeading}>6 Months</Text>
-                    <View style={styles.cardView}><Text style={styles.subHeading}>Loan Payment</Text><Text style={styles.subHeading1}>$21.56</Text></View>
-                    <View style={styles.cardView}><Text style={styles.subHeading}>No of Payment</Text><Text style={styles.subHeading1}>26</Text></View>
+                    <View style={styles.cardView}><Text style={styles.cardText}>Loan Payment</Text><Text style={styles.cardText1}>$21.56</Text></View>
+                    <View style={styles.line}></View>
+                    <View style={styles.cardView}><Text style={styles.cardText}>No of Payment</Text><Text style={styles.cardText1}>26</Text></View>
                     <TouchableOpacity style={styles.nextButtonContainer1} onPress={() => quickLoan()}><Text style={styles.nextButton}>Select 6 Months</Text></TouchableOpacity>
                 </Card>
                 <Card style={styles.cardFormat2}>
                     <Text style={styles.subHeading}>12 Months</Text>
-                    <View style={styles.cardView}><Text style={styles.subHeading}>Loan Payment</Text><Text style={styles.subHeading1}>$21.56</Text></View>
-                    <View style={styles.cardView}><Text style={styles.subHeading}>No of Payment</Text><Text style={styles.subHeading1}>48</Text></View>
+                    <View style={styles.cardView}><Text style={styles.cardText}>Loan Payment</Text><Text style={styles.cardText1}>$21.56</Text></View>
+                    <View style={styles.line}></View>
+                    <View style={styles.cardView}><Text style={styles.cardText}>No of Payment</Text><Text style={styles.cardText1}>48</Text></View>
                     <TouchableOpacity style={styles.nextButtonContainer2} onPress={() => quickLoan()}><Text style={styles.nextButton}>Select 12 Months</Text></TouchableOpacity>
                 </Card>
                 <Card style={styles.cardFormat3}>
                     <Text style={styles.subHeading}>18 Months</Text>
-                    <View style={styles.cardView}><Text style={styles.subHeading}>Loan Payment</Text><Text style={styles.subHeading1}>$21.56</Text></View>
-                    <View style={styles.cardView}><Text style={styles.subHeading}>No of Payment</Text><Text style={styles.subHeading1}>56</Text></View>
+                    <View style={styles.cardView}><Text style={styles.cardText}>Loan Payment</Text><Text style={styles.cardText1}>$21.56</Text></View>
+                    <View style={styles.line}></View>
+                    <View style={styles.cardView}><Text style={styles.cardText}>No of Payment</Text><Text style={styles.cardText1}>56</Text></View>
                     <TouchableOpacity style={styles.nextButtonContainer3} onPress={() => quickLoan()}><Text style={styles.nextButton}>Select 18 Months</Text></TouchableOpacity>
                 </Card>
             </ScrollView>
@@ -67,36 +70,56 @@ const styles = StyleSheet.create({
         fontSize: 20,
         color: '#222A35'
     },
+    line: {
+        borderTopColor: 'rgba(34, 42, 53, 0.1)',
+        borderTopWidth: 1,
+
+    },
+    cardText: {
+        margin: 10,
+        fontSize: 16,
+        color: 'rgba(34, 42, 53, 0.6)'
+    },
     cardFormat1: {
 
         borderColor: 'rgba(34, 42, 53, 0.1)',
         borderWidth: 1,
         backgroundColor: '#F2F8F4',
-        padding: 10,
+        borderRadius: 10,
+        padding: 20,
         margin: 15
     },
     cardFormat2: {
 
-        borderColor: '#EEEFF2',
+        borderColor: 'rgba(34, 42, 53, 0.1)',
         borderWidth: 1,
-        backgroundColor: '#EEEFF2',
-        padding: 10,
+        backgroundColor: '#EBF6FC',
+        padding: 20,
+        borderRadius: 10,
         margin: 15
     }, cardFormat3: {
         borderColor: 'rgba(34, 42, 53, 0.1)',
         borderWidth: 1,
+        borderRadius: 10,
         backgroundColor: '#FCF5FD',
-        padding: 10,
+        padding: 20,
         margin: 15
     }, subHeading1: {
         margin: 10,
         color: 'grey',
         //   fontFamily:'Poppins',
         fontSize: 16,
-    }, cardView: {
+    }, cardText1: {
+        margin: 10,
+        color: '#222A35',
+        //   fontFamily:'Poppins',
+        fontSize: 16,
+    },
+    cardView: {
         flexDirection: 'row',
         justifyContent: "space-between"
     }, nextButtonContainer1: {
+        marginTop: 15,
         backgroundColor: '#047E40',
         borderRadius: 10,
         shadowColor: 'rgba(0, 74, 218, 0.25)',
@@ -110,6 +133,7 @@ const styles = StyleSheet.create({
     },
     nextButtonContainer2: {
         backgroundColor: '#004ADA',
+        marginTop: 15,
         borderRadius: 10,
         shadowColor: 'rgba(0, 74, 218, 0.25)',
         shadowOffset: {
@@ -122,6 +146,7 @@ const styles = StyleSheet.create({
     },
     nextButtonContainer3: {
         backgroundColor: '#D96320',
+        marginTop: 15,
         borderRadius: 10,
         shadowColor: 'rgba(0, 74, 218, 0.25)',
         shadowOffset: {
@@ -138,6 +163,7 @@ const styles = StyleSheet.create({
         textAlign: "center",
         //fontFamily:'Poppins',
         color: 'white',
+        fontSize: 20
     },
 
 

@@ -23,9 +23,9 @@ const QuickRelief = (props) => {
                     <View style={styles.cardFormat22}><View style={styles.cellFormat}><Text>Estimated Loan Payment</Text><Text>$23.86</Text></View></View>
                     <View style={styles.cardFormat11}><View style={styles.cellFormat}><Text>Estimated First Payment Due Date</Text><Text>01/07/2022</Text></View></View>
                     <View style={styles.cardFormat2}><View style={styles.cellFormat}><Text>Payment Frequency</Text><Text>Weekly</Text></View></View>
-                    <View style={styles.info}><AntDesign name="infocirlce" size={24} color="grey" /><Text style={styles.infoText}>CREDITWORKS LLC charges a $25.00 Credit Investigation Fee on all loans. The Fee is used to offset the cost of investigating and processing your loan application.</Text></View>
-                    <View style={styles.info}><AntDesign name="infocirlce" size={24} color="grey" /><Text style={styles.infoText}>Your loan application is subject to application and employment verifications. Other terms and conditions apply. Not all applicants will qualify for a loan.</Text></View>
-                    <View style={styles.info}><AntDesign name="infocirlce" size={24} color="grey" /><Text style={styles.infoText}>Your loan information is accurate as of today's date. If your loan application is approved on a subsequent date, your loan terms may be recalculated as of the date that you sign your loan documents.</Text></View>
+                    <View style={styles.info}><AntDesign name="infocirlce" size={18} color="grey" /><Text style={styles.infoText}>CREDITWORKS LLC charges a $25.00 Credit Investigation Fee on all loans. The Fee is used to offset the cost of investigating and processing your loan application.</Text></View>
+                    <View style={styles.info}><AntDesign name="infocirlce" size={18} color="grey" /><Text style={styles.infoText}>Your loan application is subject to application and employment verifications. Other terms and conditions apply. Not all applicants will qualify for a loan.</Text></View>
+                    <View style={styles.info}><AntDesign name="infocirlce" size={18} color="grey" /><Text style={styles.infoText}>Your loan information is accurate as of today's date. If your loan application is approved on a subsequent date, your loan terms may be recalculated as of the date that you sign your loan documents.</Text></View>
                 </View>
 
             </ScrollView>
@@ -56,7 +56,7 @@ const styles = StyleSheet.create({
     headingFormat: {
         marginBottom: 10,
         fontWeight: 'bold',
-        fontSize: 30,
+        fontSize: 22,
         // fontFamily: 'Poppins'
     },
     subHeading: {

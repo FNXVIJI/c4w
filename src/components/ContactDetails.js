@@ -1,7 +1,7 @@
 import React, { Component, useState } from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, TextInput, Linking, Modal, ScrollView } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, Linking, Modal, ScrollView } from 'react-native';
 import { AntDesign } from '@expo/vector-icons';
-import { Checkbox, HelperText } from 'react-native-paper';
+import { Checkbox, HelperText, TextInput } from 'react-native-paper';
 
 
 
@@ -260,7 +260,7 @@ const ContactDetails = (props) => {
 
           <View>
             {
-              showblock1 ? (<View><TextInput style={styles.inputStyle} placeholder='Enter your 10 digit Phone number' placeholderTextColor="rgba(34, 42, 53, 0.6)" keyboardType="numeric" value={primaryNo} onChangeText={(e) => {
+              showblock1 ? (<View style={{ marginBottom: 10 }}><TextInput style={styles.inputStyle} underlineColor="transparent" label='Enter your 10 digit Phone number' placeholderTextColor="rgba(34, 42, 53, 0.6)" keyboardType="numeric" value={primaryNo} onChangeText={(e) => {
                 setPrimaryNo(e)
                 setIsValidPNo(true)
               }}></TextInput>
@@ -323,7 +323,7 @@ const ContactDetails = (props) => {
 
           <View>
             {
-              showblock2 ? (<View><TextInput style={styles.inputStyle} placeholder='Enter your 10 digit Phone number' placeholderTextColor="rgba(34, 42, 53, 0.6)" keyboardType="numeric" value={secondaryNo} onChangeText={(e) => {
+              showblock2 ? (<View style={{ marginBottom: 10 }}><TextInput style={styles.inputStyle} Label='Enter your 10 digit Phone number' placeholderTextColor="rgba(34, 42, 53, 0.6)" keyboardType="numeric" value={secondaryNo} onChangeText={(e) => {
                 setSecondaryNo(e)
                 setIsValidSNo(true)
               }}></TextInput>
@@ -465,36 +465,36 @@ const ContactDetails = (props) => {
         </View>
 
         <View style={{ marginLeft: 30 }}>
-          <Text style={{ color: '#004ADA', fontWeight: 'bold', fontSize: 16, fontFamily: 'Poppins', marginTop: 10, marginBottom: 10 }}>Home Mailing Address</Text>
-          <TextInput style={styles.inputStyle} placeholder='Address line 1' placeholderTextColor="rgba(34, 42, 53, 0.6)" value={homeAddress} onChangeText={(e) => {
+          <Text style={{ color: '#004ADA', fontWeight: 'bold', fontSize: 16, marginTop: 10, marginBottom: 10 }}>Home Mailing Address</Text>
+          <TextInput style={styles.inputStyle} label='Address line 1' underlineColor="transparent" placeholderTextColor="rgba(34, 42, 53, 0.6)" value={homeAddress} onChangeText={(e) => {
             setHomeAddress(e)
             setIsValidHAddress1(true)
           }} />
           {!isValidHAddress1 ? (<HelperText type="error">
             Home mailing address is invalid!
           </HelperText>) : (null)}
-          <TextInput style={styles.inputStyle} placeholder='Address Line 2' placeholderTextColor="rgba(34, 42, 53, 0.6)" value={homeAddress2} onChangeText={(e) => {
+          <TextInput style={styles.inputStyle} label='Address Line 2' underlineColor="transparent" placeholderTextColor="rgba(34, 42, 53, 0.6)" value={homeAddress2} onChangeText={(e) => {
             setHomeAddress2(e)
             setIsValidHAddress2(true)
           }} />
           {!isValidHAddress2 ? (<HelperText type="error">
             Address line 2 is invalid!
           </HelperText>) : (null)}
-          <TextInput style={styles.inputStyle} placeholder='Zip Code' keyboardType='numeric' placeholderTextColor="rgba(34, 42, 53, 0.6)" value={homeZipcode} onChangeText={(e) => {
+          <TextInput style={styles.inputStyle} label='Zip Code' underlineColor="transparent" keyboardType='numeric' placeholderTextColor="rgba(34, 42, 53, 0.6)" value={homeZipcode} onChangeText={(e) => {
             setHomeZipcode(e)
             setIsValidHomeZipcode(true)
           }} />
           {!isValidHomeZipcode ? (<HelperText type="error">
             Zipcode is invalid!
           </HelperText>) : (null)}
-          <TextInput style={styles.inputStyle} placeholder='City' placeholderTextColor="rgba(34, 42, 53, 0.6)" value={homeCity} onChangeText={(e) => {
+          <TextInput style={styles.inputStyle} label='City' underlineColor="transparent" placeholderTextColor="rgba(34, 42, 53, 0.6)" value={homeCity} onChangeText={(e) => {
             setHomeCity(e)
             setIsValidHomeCity(true)
           }} />
           {!isValidHomeCity ? (<HelperText type="error">
             City is invalid!
           </HelperText>) : (null)}
-          <TextInput style={styles.inputStyle} placeholder='State' placeholderTextColor="rgba(34, 42, 53, 0.6)" value={homeState} onChangeText={(e) => {
+          <TextInput style={styles.inputStyle} label='State' underlineColor="transparent" placeholderTextColor="rgba(34, 42, 53, 0.6)" value={homeState} onChangeText={(e) => {
             setHomeState(e)
             setIsValidHomeState(true)
           }} />
@@ -504,7 +504,7 @@ const ContactDetails = (props) => {
 
 
 
-          <Text style={{ color: '#004ADA', fontWeight: 'bold', fontSize: 16, fontFamily: 'Poppins', marginTop: 10, marginBottom: 10 }}>Residence Mailing Address</Text>
+          <Text style={{ color: '#004ADA', fontWeight: 'bold', fontSize: 16, marginTop: 10, marginBottom: 10 }}>Residence Mailing Address</Text>
 
           <TouchableOpacity style={{
             backgroundColor: '#EEEFF2', marginBottom: 10,
@@ -525,7 +525,6 @@ const ContactDetails = (props) => {
               height: 50,
 
               alignItems: 'center',
-              fontFamily: 'poppins',
               color: '#FFFFFF',
             } : {
               flexDirection: "row",
@@ -537,25 +536,23 @@ const ContactDetails = (props) => {
 
               height: 50,
               alignItems: 'center',
-              fontFamily: 'poppins',
               color: '#047E40',
             }}>
               <Checkbox color='white'
                 status={checked ? 'checked' : 'unchecked'}
 
               /><Text style={checked ? {
-                color: '#FFFFFF', fontFamily: 'Poppins',
+                color: '#FFFFFF',
                 fontSize: 14
               } : {
                 marginLeft: 10,
-                fontFamily: 'Poppins',
                 fontSize: 14,
                 color: '#047E40',
               }}> Same as Home Address </Text>
 
             </View>
           </TouchableOpacity>
-          <TextInput style={styles.inputStyle} placeholder='Address line 1' placeholderTextColor="rgba(34, 42, 53, 0.6)" value={residenceAddress} onChangeText={(e) => {
+          <TextInput style={styles.inputStyle} label='Address line 1' underlineColor="transparent" placeholderTextColor="rgba(34, 42, 53, 0.6)" value={residenceAddress} onChangeText={(e) => {
             setResidenceAddress(e)
             setIsValidResidenceAddress(true)
           }} />
@@ -563,28 +560,28 @@ const ContactDetails = (props) => {
             Residence Address is invalid!
             {residenceAddress}
           </HelperText>) : (null)}
-          <TextInput style={styles.inputStyle} placeholder='Address Line 2' placeholderTextColor="rgba(34, 42, 53, 0.6)" value={residenceAddress2} onChangeText={(e) => {
+          <TextInput style={styles.inputStyle} label='Address Line 2' underlineColor="transparent" placeholderTextColor="rgba(34, 42, 53, 0.6)" value={residenceAddress2} onChangeText={(e) => {
             setResidenceAddress2(e)
             setIsValidResidenceAddress2(true)
           }} />
           {!isValidResidenceAddress2 ? (<HelperText type="error">
             Residence Address line 2 is invalid!
           </HelperText>) : (null)}
-          <TextInput style={styles.inputStyle} placeholder='Zip Code' keyboardType='numeric' placeholderTextColor="rgba(34, 42, 53, 0.6)" value={RZipcode} onChangeText={(e) => {
+          <TextInput style={styles.inputStyle} label='Zip Code' underlineColor="transparent" keyboardType='numeric' placeholderTextColor="rgba(34, 42, 53, 0.6)" value={RZipcode} onChangeText={(e) => {
             setRZipcode(e)
             setIsValidRZipcode(true)
           }} />
           {!isValidRZipcode ? (<HelperText type="error">
             Residence Zipcode is invalid!
           </HelperText>) : (null)}
-          <TextInput style={styles.inputStyle} placeholder='City' placeholderTextColor="rgba(34, 42, 53, 0.6)" value={RCity} onChangeText={(e) => {
+          <TextInput style={styles.inputStyle} label='City' underlineColor="transparent" placeholderTextColor="rgba(34, 42, 53, 0.6)" value={RCity} onChangeText={(e) => {
             setRCity(e)
             setIsValidRCity(true)
           }} />
           {!isValidRCity ? (<HelperText type="error">
             Residence City is invalid!
           </HelperText>) : (null)}
-          <TextInput style={styles.inputStyle} placeholder='State' placeholderTextColor="rgba(34, 42, 53, 0.6)" value={RState} onChangeText={(e) => {
+          <TextInput style={styles.inputStyle} label='State' underlineColor="transparent" placeholderTextColor="rgba(34, 42, 53, 0.6)" value={RState} onChangeText={(e) => {
             setRState(e)
             setIsValidRState(true)
           }} />
@@ -605,10 +602,12 @@ const ContactDetails = (props) => {
               setIsValidTerms(checked);
 
             }}
-          />
-          <Text style={styles.checkboxtext}>You agree that, in order for CREDITWORKS LLC to service this loan or to collect any amounts you owe, that we may from time to <Text style={{ color: 'blue' }}
-            onPress={() => Linking.openURL('http://google.com')}>Read More ...</Text>  </Text>
+          /><View>
+            <Text style={styles.checkboxtext}>You agree that, in order for CREDITWORKS LLC to service this loan or to collect any amounts you owe, that we may from time to<Text style={{ color: 'blue' }}> Read More ...</Text></Text>
+
+          </View>
         </View>
+
         {!isValidTerms ? (<HelperText type="error">
           terms and conditions is invalid!
         </HelperText>) : (null)}
@@ -636,9 +635,9 @@ const styles = StyleSheet.create({
   },
   checkboxContainer: {
     flexDirection: "row",
-    marginBottom: 20,
-    padding: 20,
-    justifyContent: 'center'
+    marginBottom: 30,
+    padding: 10,
+    alignItems: 'flex-start'
   },
   checkboxContainer1: {
     flexDirection: "row",
@@ -649,7 +648,6 @@ const styles = StyleSheet.create({
     borderColor: '#EEEFF2',
     height: 50,
     alignItems: 'center',
-    fontFamily: 'poppins',
     color: '#047E40',
   },
 
@@ -678,13 +676,13 @@ const styles = StyleSheet.create({
   buttonContainer1: {
     backgroundColor: '#EEEFF2',
     height: 50,
-    fontFamily: 'Poppins',
+    // fontFamily: 'Poppins',
     fontSize: 14,
     marginBottom: 10,
     borderColor: 'black',
     borderStyle: 'solid',
     borderWidth: 0,
-    borderRadius: 5,
+    borderRadius: 10,
   },
   headingFormat: {
     marginBottom: 10,
@@ -696,22 +694,22 @@ const styles = StyleSheet.create({
     marginBottom: 10,
     color: '#222A35',
     //   fontFamily:'Poppins',
-    fontSize: 16,
+    fontSize: 14,
     fontWeight: 'bold',
   }, subHeading1: {
     marginBottom: 30,
-    color: 'grey',
+    color: 'rgba(34, 42, 53, 0.6)',
     //   fontFamily:'Poppins',
     fontSize: 16,
   },
   inputStyle: {
-
     borderRadius: 10,
     height: 50,
     backgroundColor: '#EEEFF2',
-    // fontFamily: 'Poppins',
+    //  fontFamily: 'Poppins',
     marginBottom: 10,
     fontSize: 14,
+    //fontWeight: 'bold',
     paddingHorizontal: 10,
     borderWidth: 0,
     shadowOffset: {
@@ -722,7 +720,6 @@ const styles = StyleSheet.create({
 
   },
   inputStyle1: {
-
     borderRadius: 10,
     height: 50,
     width: 70,
@@ -750,10 +747,11 @@ const styles = StyleSheet.create({
     color: "rgba(34, 42, 53, 0.6)",
   },
   checkboxtext: {
-    // padding:5,
-    // flexWrap:'wrap',
-    // marginRight:10,
     color: 'rgba(34, 42, 53, 0.6)',
+    fontSize: 14,
+    marginRight: 15
+
+
   },
   checkboxtext1: {
     marginLeft: 10,

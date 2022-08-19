@@ -19,7 +19,7 @@ const DesignYourLoan = (props) => {
             <ScrollView>
                 <Text style={styles.headingFormat}>Design Your Loan</Text>
                 <Text style={styles.subHeading1} >Credit4work offers the following loan options to assist your financial needs</Text>
-                <View style={{ borderColor: 'rgba(34, 42, 53, 0.1)', borderWidth: 1, backgroundColor: '#F2F8F4', padding: 10, margin: 15, borderRadius: 10 }}>
+                <View style={{ borderColor: 'rgba(34, 42, 53, 0.1)', borderWidth: 1, backgroundColor: '#F2F8F4', padding: 20, marginVertical: 10, borderRadius: 10 }}>
                     <View style={{ flexDirection: 'row', justifyContent: "space-between" }}>
                         <Text style={{ marginBottom: 10, fontSize: 22, fontWeight: 'bold' }}>Quick Relief</Text>
                         <Text style={{ marginBottom: 10, color: 'grey' }}>For Instant Needs</Text>
@@ -30,10 +30,10 @@ const DesignYourLoan = (props) => {
                         <View style={{ flexDirection: 'row', marginVertical: 10 }}><AntDesign name="checkcircle" size={24} color="green" /><Text style={{ marginLeft: 10 }}>0% Interest Rate</Text></View>
                         <View style={{ flexDirection: 'row', }}><AntDesign name="checkcircle" size={24} color="green" /><Text style={{ marginLeft: 10 }}>$25 Up-front Fee</Text></View>
                     </View>
-                    <TouchableOpacity style={styles.nextButtonContainer1} onPress={() => quickLoan()}><Text style={styles.nextButton}>Selct Quick Relief</Text></TouchableOpacity>
+                    <TouchableOpacity style={styles.nextButtonContainer1} onPress={() => quickLoan()}><Text style={styles.nextButton}>Select Quick Relief</Text></TouchableOpacity>
 
                 </View>
-                <View style={{ borderColor: 'rgba(34, 42, 53, 0.1)', borderRadius: 10, backgroundColor: '#EBF6FC', padding: 10, borderWidth: 1, margin: 15 }}>
+                <View style={{ borderColor: 'rgba(34, 42, 53, 0.1)', borderRadius: 10, backgroundColor: '#EBF6FC', padding: 20, marginVertical: 10, borderWidth: 1 }}>
                     <View style={{ flexDirection: 'row', justifyContent: "space-between" }}>
                         <Text style={{ marginBottom: 10, fontSize: 22, fontWeight: 'bold' }}>Flexiable Lifeline</Text>
                         <Text style={{ marginBottom: 10, color: 'grey' }}>For Instant Needs</Text>
@@ -85,7 +85,7 @@ const styles = StyleSheet.create({
         fontSize: 16,
     },
     subHeading1: {
-        marginBottom: 10,
+        marginBottom: 30,
         color: 'grey',
         //   fontFamily:'Poppins',
         fontSize: 16,
@@ -117,6 +117,7 @@ const styles = StyleSheet.create({
         color: 'rgba(34, 42, 53, 0.6)',
     },
     nextButtonContainer1: {
+        marginTop: 10,
         backgroundColor: '#047E40',
         borderRadius: 10,
         shadowColor: 'rgba(0, 74, 218, 0.25)',
@@ -129,6 +130,7 @@ const styles = StyleSheet.create({
         width: 100 + '%',
     },
     nextButtonContainer2: {
+        marginTop: 10,
         backgroundColor: '#004ADA',
         borderRadius: 10,
         shadowColor: 'rgba(0, 74, 218, 0.25)',
@@ -157,7 +159,7 @@ const styles = StyleSheet.create({
         padding: 15,
         fontWeight: 'bold',
         textAlign: "center",
-        fontSize: 16,
+        fontSize: 20,
 
         //fontFamily:'Poppins',
         color: 'white',

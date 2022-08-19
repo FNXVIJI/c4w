@@ -16,26 +16,27 @@ const MonthlyBudget = (props) => {
             <ScrollView>
                 <Text style={styles.headingFormat}>My Monthly Budget</Text>
                 <Text style={styles.subHeading1} >Please select your monthy budget </Text>
-                <Text style={styles.subHeading}>Monthly Income</Text>
+                <Text style={styles.subHeading}>My Monthly Income</Text>
                 <View style={{ marginBottom: 10 }}><TextInput style={styles.inputStyle}
 
                     onChangeText={(e) => {
 
-                    }} placeholder='Pay Check' placeholderTextColor="rgba(34, 42, 53, 0.6)" keyboardType='numeric' right={<TextInput.Affix text="In $" />} />
+                    }} placeholder='Pay Check' placeholderTextColor="rgba(34, 42, 53, 0.6)" keyboardType='numeric' underlineColor="transparent" right={<TextInput.Affix text="In $" />} />
                     <TextInput style={styles.inputStyle}
                         // value={otherincome}
                         onChangeText={(e) => {
 
-                        }} placeholder='Other Income' placeholderTextColor="rgba(34, 42, 53, 0.6)" keyboardType='numeric' right={<TextInput.Affix text="In $" />} />
-                    <View style={styles.cellFormat}><Text>Total Monthly NetIncome</Text><Text>$0.00</Text></View>
+                        }} placeholder='Other Income' placeholderTextColor="rgba(34, 42, 53, 0.6)" keyboardType='numeric' underlineColor="transparent" right={<TextInput.Affix text="In $" />} />
+                    <View style={styles.line}></View>
+                    <View style={styles.cellFormat1}><Text style={{ fontSize: 14, fontWeight: '500' }}>Total Monthly Net Income:</Text><Text style={{ fontWeight: '500', color: '#004ADA' }}>$0.00</Text></View>
                 </View>
-
+                <Text style={styles.subHeading}>My Monthly Expenses</Text>
                 <TextInput style={styles.inputStyle}
-                    // value={housing}
+                    // value={housing}:
                     onChangeText={(e) => {
 
-                    }} placeholder='Housing' placeholderTextColor="rgba(34, 42, 53, 0.6)" keyboardType='numeric' right={<TextInput.Affix text="In $" />} />
-                <TextInput style={styles.inputStyle}
+                    }} placeholder='Housing' placeholderTextColor="rgba(34, 42, 53, 0.6)" keyboardType='numeric' underlineColor="transparent" right={<TextInput.Affix text="In $" />} />
+                <TextInput underlineColor="transparent" style={styles.inputStyle}
                     //value={Utilites}
                     onChangeText={(e) => {
 
@@ -44,42 +45,44 @@ const MonthlyBudget = (props) => {
                     // value={housing}
                     onChangeText={(e) => {
 
-                    }} placeholder='Groceries' placeholderTextColor="rgba(34, 42, 53, 0.6)" keyboardType='numeric' right={<TextInput.Affix text="In $" />} />
+                    }} placeholder='Groceries' underlineColor="transparent" placeholderTextColor="rgba(34, 42, 53, 0.6)" keyboardType='numeric' right={<TextInput.Affix text="In $" />} />
                 <TextInput style={styles.inputStyle}
                     //value={gro}
                     onChangeText={(e) => {
 
-                    }} placeholder='Transportation' placeholderTextColor="rgba(34, 42, 53, 0.6)" keyboardType='numeric' right={<TextInput.Affix text="In $" />} />
+                    }} placeholder='Transportation' underlineColor="transparent" placeholderTextColor="rgba(34, 42, 53, 0.6)" keyboardType='numeric' right={<TextInput.Affix text="In $" />} />
                 <TextInput style={styles.inputStyle}
                     //value={housing}
                     onChangeText={(e) => {
 
-                    }} placeholder='Health' placeholderTextColor="rgba(34, 42, 53, 0.6)" keyboardType='numeric' right={<TextInput.Affix text="In $" />} />
+                    }} placeholder='Health' underlineColor="transparent" placeholderTextColor="rgba(34, 42, 53, 0.6)" keyboardType='numeric' right={<TextInput.Affix text="In $" />} />
                 <TextInput style={styles.inputStyle}
                     //value={Utilites}
                     onChangeText={(e) => {
 
-                    }} placeholder='Insurance' placeholderTextColor="rgba(34, 42, 53, 0.6)" keyboardType='numeric' right={<TextInput.Affix text="In $" />} />
+                    }} placeholder='Insurance' underlineColor="transparent" placeholderTextColor="rgba(34, 42, 53, 0.6)" keyboardType='numeric' right={<TextInput.Affix text="In $" />} />
                 <TextInput style={styles.inputStyle}
                     //value={housing}
                     onChangeText={(e) => {
 
-                    }} placeholder='Finance' placeholderTextColor="rgba(34, 42, 53, 0.6)" keyboardType='numeric' right={<TextInput.Affix text="In $" />} />
+                    }} placeholder='Finance' underlineColor="transparent" placeholderTextColor="rgba(34, 42, 53, 0.6)" keyboardType='numeric' right={<TextInput.Affix text="In $" />} />
                 <TextInput style={styles.inputStyle}
                     //value={Utilites}
                     onChangeText={(e) => {
 
-                    }} placeholder='Personal & Family' placeholderTextColor="rgba(34, 42, 53, 0.6)" keyboardType='numeric' right={<TextInput.Affix text="In $" />} />
+                    }} placeholder='Personal & Family' underlineColor="transparent" placeholderTextColor="rgba(34, 42, 53, 0.6)" keyboardType='numeric' right={<TextInput.Affix text="In $" />} />
                 <TextInput style={styles.inputStyle}
                     //value={housing}
                     onChangeText={(e) => {
 
-                    }} placeholder='Others' placeholderTextColor="rgba(34, 42, 53, 0.6)" keyboardType='numeric' right={<TextInput.Affix text="In $" />} />
-                <View style={styles.cellFormat}><Text>Total Monthly Expense</Text><Text>$0.00</Text></View>
-                <Card style={styles.cardFormat}>
-                    <View style={styles.cellFormat}><Text>Estimated Future Loan</Text><Text>$0.00</Text></View>
-                    <View style={styles.cellFormat}><Text>Remaining Available Cash</Text><Text>$0.00</Text></View>
-                </Card>
+                    }} placeholder='Others' underlineColor="transparent" placeholderTextColor="rgba(34, 42, 53, 0.6)" keyboardType='numeric' right={<TextInput.Affix text="In $" />} />
+                <View style={styles.line}></View>
+                <View style={styles.cellFormat1}><Text style={{ fontSize: 14, fontWeight: '500' }}>Total Monthly Expense:</Text><Text style={{ fontWeight: "500", color: '#004ADA' }}>$0.00</Text></View>
+                <View style={styles.cardFormat}>
+                    <View style={styles.cellFormat}><Text style={{ color: 'rgba(34, 42, 53, 0.6)' }}>Estimated Future Loan Payment</Text><Text>$0.00</Text></View>
+                    <View style={styles.line2}></View>
+                    <View style={styles.cellFormat}><Text style={{ color: 'rgba(34, 42, 53, 0.6)' }}>Remaining Available Cash</Text><Text>$0.00</Text></View>
+                </View>
 
             </ScrollView>
             <View style={styles.buttonContainer}>
@@ -112,15 +115,25 @@ const styles = StyleSheet.create({
         color: '#222A35',
         // fontFamily: 'Poppins',
         fontSize: 16,
+        fontWeight: '500'
+
 
     }, subHeading1: {
-        marginBottom: 10,
+        marginBottom: 30,
         color: 'grey',
         //   fontFamily:'Poppins',
         fontSize: 16,
     },
+    line: {
+        borderTopColor: 'rgba(34, 42, 53, 0.1)',
+        borderTopWidth: 1,
+        marginBottom: 10
+    }, line2: {
+        borderTopColor: 'rgba(34, 42, 53, 0.1)',
+        borderTopWidth: 1,
+        marginVertical: 10
+    },
     inputStyle: {
-
         borderRadius: 10,
         height: 50,
         backgroundColor: '#EEEFF2',
@@ -135,16 +148,21 @@ const styles = StyleSheet.create({
         },
         elevation: 0
 
+    }, cellFormat1: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        marginBottom: 20
     }, cellFormat: {
         flexDirection: 'row',
         justifyContent: 'space-between',
-    }, cardFormat: {
-
-        borderColor: '#EEEFF2',
+    },
+    cardFormat: {
+        borderColor: 'rgba(34, 42, 53, 0.1)',
         borderWidth: 1,
-        backgroundColor: '#EEEFF2',
-        padding: 10,
+        backgroundColor: '#F2F8F4',
+        padding: 15,
         marginTop: 10,
+        borderRadius: 10
     }, backButton: {
         backgroundColor: '#EEEFF2',
         margin: 10,
@@ -159,6 +177,7 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         //  fontFamily:'Poppins',
         color: 'rgba(34, 42, 53, 0.6)',
+        fontSize: 16
     },
     nextButtonContainer: {
         backgroundColor: '#004ADA',
@@ -183,6 +202,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',
     }, buttonContainer: {
+        marginTop: 30,
         flexDirection: 'row',
         justifyContent: 'space-around'
     }
